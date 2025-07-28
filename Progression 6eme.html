@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Progression de Mathématiques 6e - Séquences interactives</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+   /* Fond général de la page */
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background: linear-gradient(to right, #dbe4f0, #c8d2e4); /* fond bleu-gris doux + foncé */
+  color: #1a1a1a;
+}
+
+/* Titre encadré et centré */
+h1 {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 40px;
+  font-size: 26px;
+  border: 2px solid #8dbbe6;
+  border-radius: 10px;
+  background-color: #eef6ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Boutons accordéon standards (bleu) */
+.accordion {
+  position: relative;
+  background-color: #dbeeff;
+  color: #1a1a1a;
+  cursor: pointer;
+  padding: 14px 20px;
+  width: 100%;
+  border: 1px solid #8dbbe6;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 18px;
+  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion:hover {
+  background-color: #c1e0ff;
+}
+
+/* Bouton accordéon version rouge */
+.accordion.red {
+  background-color: #ffd6d6;
+  border: 1px solid #e6aaaa;
+}
+
+.accordion.red:hover {
+  background-color: #ffc0c0;
+}
+
+/* Flèche à droite du bouton */
+.accordion .arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.3s ease;
+  font-size: 16px;
+}
+
+.accordion.active .arrow {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Contenu des panneaux */
+.panel {
+  display: none;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  margin-bottom: 20px;
+  border-radius: 0 0 6px 6px;
+  overflow-x: auto;
+}
+
+/* Table des séquences */
+.sequence-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+/* Bordures et espacement */
+.sequence-table th,
+.sequence-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  text-align: left;
+}
+
+/* En-tête du tableau */
+.sequence-table th {
+  background-color: #e6f7ff;
+  font-weight: bold;
+}
+
+/* Colonnes avec largeur fixe pour alignement */
+.sequence-table th:nth-child(1),
+.sequence-table td:nth-child(1) {
+  width: 20%;
+}
+
+.sequence-table th:nth-child(2),
+.sequence-table td:nth-child(2) {
+  width: 25%;
+}
+
+.sequence-table th:nth-child(3),
+.sequence-table td:nth-child(3) {
+  width: 40%;
+}
+
+.sequence-table th:nth-child(4),
+.sequence-table td:nth-child(4) {
+  width: 15%;
+}
+
+
+/* Liens dans la colonne "Exercices" */
+.sequence-table a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.sequence-table a:hover {
+  color: #003366;
+}
+
+.accordion.violet {
+  background-color: #eadcff;
+  border: 1px solid #c7b3ec;
+}
+.accordion.violet:hover {
+  background-color: #dbc9ff;
+}
+
+.accordion.green {
+  background-color: #d4f8d4;
+  border: 1px solid #a5e0a5;
+}
+.accordion.green:hover {
+  background-color: #bff0bf;
+}
+
+.accordion a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+  
+.accordion.white {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  color: #333;
+}
+.accordion.white:hover {
+  background-color: #e9e9e9;
+}
+
+.accordion.multicolor {
+  background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #2196f3, #9c27b0);
+  color: white;
+  font-weight: bold;
+  border: 1px solid #ccc;
+}
+.accordion.multicolor:hover {
+  filter: brightness(1.1);
+}
+
+.num-circle {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: 900;
+  color: black;
+  margin-right: 8px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #f44336, #ff9800, #ffeb3b, #4caf50, #2196f3, #9c27b0);
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<h1>Progression de Mathématiques 6e</h1>
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence transversale : Calcul mental -->
+<button class="accordion multicolor">
+  <a href="#" target="_blank">
+    Calcul mental et automatismes
+  </a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Sommaire</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr>
+<td><span class="num-circle">1</span> Tables de multiplication 
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">2</span> Complément à 10, 100, 1 000… 
+<td> Exercices 
+</tr>
+    
+<tr>
+<td><span class="num-circle">3</span> Doubles et moitiés de nombres entiers
+<td> Exercices 
+</tr>  
+  
+<tr>
+<td><span class="num-circle">4</span> Ajouter ou retrancher un nombre terminant par 8 ou par 9 page 10
+<td> Exercices 
+</tr> 
+
+<tr>
+<td><span class="num-circle">5</span> Quadruples et quarts de nombres entiers
+<td> Exercices 
+</tr>    
+
+<tr>
+<td><span class="num-circle">6</span> Multiplier ou diviser par 5
+<td> Exercices 
+</tr>      
+
+<tr>
+<td><span class="num-circle">7</span> Critère de divisibilité par 3
+<td> Exercices 
+</tr>    
+  
+<tr>
+<td><span class="num-circle">8</span> Critère de divisibilité par 9
+<td> Exercices 
+</tr>  
+    
+<tr>
+<td><span class="num-circle">9</span> Conversions de durées 
+<td> Exercices 
+</tr>     
+ 
+<tr>
+<td><span class="num-circle">10</span> Multiplier par 11   
+<td> Exercices 
+</tr> 
+    
+<tr>
+<td><span class="num-circle">11</span> Multiplier par 8 
+<td> Exercices 
+</tr>  
+     
+<tr>
+<td><span class="num-circle">12</span> Multiplier par 25  
+<td> Exercices 
+</tr>
+      
+<tr>
+<td><span class="num-circle">13</span> Numération décimale   
+<td> Exercices 
+</tr>   
+ 
+<tr>
+<td><span class="num-circle">14</span> Fractions décimales et nombres décimaux   
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">15</span> Multiplier par 9   
+<td> Exercices 
+</tr>
+     
+<tr>
+<td><span class="num-circle">16</span> Les diviseurs de 360, 180 et 90    
+<td> Exercices 
+</tr> 
+
+<tr>
+<td><span class="num-circle">17</span> Multiplier par 15        
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">18</span> Priorités opératoires (sans parenthèses)    
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">19</span> Priorités opératoires (avec parenthèses)  
+<td> Exercices 
+</tr>
+  
+<tr>
+<td><span class="num-circle">20</span> Complément à 1        
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">21</span> Multiplier par 10, 100 ou 1 000   
+<td> Exercices 
+</tr>  
+
+<tr>
+<td><span class="num-circle">22</span> Diviser par 10, 100 ou 1 000    
+<td> Exercices 
+</tr>  
+
+<tr>
+<td><span class="num-circle">23</span> Multiplier par 0,1 ou 0,01 ou 0,001    
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">24</span> Conversions (unités de longueur, de masse et de capacité)  
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">25</span> Arrondi d’un nombre       
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">26</span> Doubles et moitiés de nombres décimaux  
+<td> Exercices 
+</tr>
+ 
+<tr>
+<td><span class="num-circle">27</span> Diviser par 125      
+<td> Exercices 
+</tr>
+  
+<tr>
+<td><span class="num-circle">28</span> Egalités de quotients  
+<td> Exercices 
+</tr>
+     
+<tr>
+<td><span class="num-circle">29</span> Multiplier par 1/2 ou par 1/4 ou par 1/5   
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">30</span> Calcul de périmètres     
+<td> Exercices 
+</tr>  
+
+<tr>
+<td><span class="num-circle">31</span> Conversions (unités d’aire)     
+<td> Exercices 
+</tr> 
+ 
+<tr>
+<td><span class="num-circle">32</span> Calcul d’aires         
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">33</span> Multiplier par 0,5 ou par 0,25 ou par 0,2   
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">34</span> Multiplier par 1,5        
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">35</span> Tableaux de proportionnalité      
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">36</span> Pourcentages simples (50%, 25%, 20%, 10%, 5%, 1%)
+<td> Exercices 
+</tr>
+
+<tr>
+<td><span class="num-circle">37</span> Pourcentage d’un nombre (méthode) 
+<td> Exercices 
+</tr>
+    
+<tr>
+<td><span class="num-circle">38</span> Conversions (unités de volume) 
+<td> Exercices 
+</tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 1 -->
+<button class="accordion">
+  <a href="https://www.maths-et-tiques.fr/telech/25Nombres1.pdf" target="_blank">
+  Séquence 1 : Nombres entiers  </a>
+  <span class="arrow">&#9654;</span>
+</button>
+
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+	<th>Contenus</th>
+	<th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	 <td rowspan="7"> • Numération jusqu’à milliard <br>
+• Décomposition et différentes écriture <br>
+• « Nombre de » vs « chiffre de » <br>
+• Demi-droite graduée <br>
+• Abscisse entière d'un point
+ </td>
+        <td> • Connaître et utiliser la valeur des chiffres selon leur rang.
+	<br> • Connaître les liens entre les unités de numération unité, dizaine, centaine, millier, dixième, centième, millième.</td>
+        <td> • Dans 1,27, l’élève identifie le chiffre des centièmes qu'il distingue du nombre de centièmes. </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td> • Connaitre des grands nombres entiers. </td>
+        <td> • Les principes de la numération décimale de position sont étendus à la classe des milliards. </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+        <tr>
+        <td> • Placer sur une demi-droite graduée un point dont l’abscisse est un nombre entier. 
+	<br> • Repérer un nombre entier sur une demi-droite graduée. 
+	</td>
+        <td>
+          • La graduation de la demi-droite est adaptée aux nombres proposés.  
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 2 -->
+<button class="accordion red">
+<a href="https://www.maths-et-tiques.fr/telech/25Para_Perp.pdf" target="_blank"> 
+   Séquence 2 : Géométrie (rappels) </a>
+  <span class="arrow">&#9654;</span>
+</button>
+
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr><td rowspan="7"> • Vocabulaire et notations points, segment, droite, demi-droite<br>
+• Appartenance et alignement<br>
+• Positions relatives de deux droites et symboles ⊥ et //<br>
+• Tracer aux instruments une perpenduculaire ou une parallèle<br>
+• Codage géométrique<br>
+• Notion d'unicité
+ </td>
+
+<td>
+  <span style="color: grey;">
+• Utiliser le vocabulaire géométrique approprié dans le contexte d’apprentissage des notions correspondantes.<br>
+• Utiliser les outils géométriques usuels : règle, règle graduée, équerre et compas.<br>
+• Connaitre les notations etles codes usuels utilisés engéométrie.<br>
+• Reconnaitre et utiliser la notion de perpendicularité.<br>
+• Reconnaitre et utiliser la notion de parallélisme. </span>
+</td>
+<td>
+  <span style="color: grey;">• Dans le cadre des activités géométriques menées et de la résolution de
+problèmes, l’élève utilise à bon escient le vocabulaire géométrique usuel :
+► point, droite, segment, demi-droite, milieu d’un segment ;
+► droite sécantes, droites perpendiculaires, droites parallèles ;
+► angle droit, angle aigu, angle obtus.<br>
+• L’élève connait et utilise les codes apposés sur une figure pour indiquer des
+angles droits, des angles de même mesure ou des longueurs égales.<br>
+• L’élève connait les symboles ⊥ ; // ; ∈ et ∉. </span>
+</td>
+<td><a href="#">Lien à ajouter</a></td>
+</tr>
+
+<tr>
+<td>
+  <span style="color: grey;"> • Construire une figure géométrique composée de segments, de droites, de polygones usuels et de cercles.
+ </span>
+</td>
+<td>
+  <span style="color: grey;"> • L’élève sait construire une figure à partir d’un programme de construction. Ces instructions peuvent porter, par exemple, sur la construction de segments ou de droites, de droites parallèles ou perpendiculaires à une droite donnée et passant par un point donné, de cercles de centre donné et passant par un point donné ou ayant un rayon donné, de polygones usuels.
+</td>
+<td><a href="#">Lien à ajouter</a></td>
+</tr>
+      
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 3 -->
+<button class="accordion">
+<a href="https://www.maths-et-tiques.fr/telech/25Nombres2.pdf" target="_blank">  
+  Séquence 3 : Nombres décimaux </a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+	<tr><td rowspan="7"> • Définition <br>
+• Décompositions d'un nombre décimal<br>
+• Comparer deux nombres décimaux<br>
+• Ranger des nombres décimaux<br>
+• Encadrer un nombre décimal<br>
+• Abscisse décimale d'un point
+ </td>
+
+        <td> • Reconnaitre un nombre décimal. 
+		<br> • Associer et utiliser différentes écritures d’un nombre décimal : écriture à virgule, fraction, nombre mixte. 
+	</td>
+        <td> • Un nombre décimal est un nombre qui peut s’écrire sous forme d’une fraction dont le numérateur est un nombre entier et dont le dénominateur est égal à 1, 10, 100, 1 000, etc. 
+		<br> • L’élève sait qu’un nombre entier est un nombre décimal. 
+		Par exemple, il remarque que 2 = 2,0 et que 2 = 20/10 = 2/1. 
+		<br> • L’élève sait qu’un même nombre admet plusieurs écritures. 
+		Dans le cadre d’une fraction supérieure à 1, il utilise l’écriture sous forme de nombre mixte, somme d’un nombre entier et d’une fraction inférieure à 1. 
+		<br> • L’élève est sensibilisé au choix d’une ou de plusieurs écritures adaptées à une situation donnée, que ce soit dans le cadre d’une opération à effectuer ou d’un problème à résoudre. </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td> • Placer sur une demi-droite graduée un point dont l’abscisse est un nombre décimal. 
+	<br> • Repérer un nombre décimal sur une demi-droite graduée. 
+	</td>
+        <td>
+          • La graduation de la demi-droite est adaptée aux nombres proposés.  
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td> • Comparer deux nombres décimaux. 
+	<br> • Ordonner une liste de nombres décimaux.</td>
+        <td>
+          • Les signes d’inégalités larges ⩽ et ⩾ sont introduits à cette occasion. L’élève justifie les procédures utilisées pour comparer ou ranger des nombres décimaux en s’appuyant sur la signification de leur écriture décimale ou sur le placement des points associés sur une demi droite graduée.  
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td> •  Donner la valeur arrondie à l’unité, au dixième, ou au centième d’un nombre décimal.
+	<br> • Déterminer ou connaitre la valeur arrondie de certains nombres non décimaux. 
+	<br> • Encadrer un nombre décimal par deux nombres décimaux, intercaler un nombre décimal entre deux nombres décimaux. 
+</td>
+        <td> • En lien avec la division décimale posée l’élève comprend par exemple, que 1/3 n’est pas un nombre décimal et que 0,33 en est la valeur arrondie au centième. 
+<br> • L’élève justifie les procédures utilisées pour encadrer ou intercaler des nombres décimaux en s’appuyant sur la signification de leur écriture décimale ou sur le placement des points associés sur une demi-droite graduée. 
+        </td>
+        <td><a href="https://mathenpoche.sesamath.net/" target="_blank">Mathenpoche</a></td>
+      </tr>
+      </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 4 -->
+<button class="accordion red">
+<a href="https://www.maths-et-tiques.fr/telech/25Long.pdf" target="_blank">  
+  Séquence 4 : Cercles et distances
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>   
+    <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+	<tr><td rowspan="7"> • Distance entre 2 points<br>
+• Inégalité triangulaire<br>
+• Milieu d'un segment<br>
+• Vocabulaire du cercle<br>
+• Ensemble de points (cercle et disque) </td>
+
+        <td> • Connaitre et utiliser la définition de la distance entre deux points.<br>
+	• Connaitre et utiliser la définition du milieu d’un segment. 
+	</td>
+        <td> • La distance entre deux points A et B est définie comme la longueur du segment [AB]. Elle est notée AB. L’élève admet que le plus court chemin pour aller de A à B est le segment [AB]. Il en déduit que, pour tout point C, AC + CB ⩾ AB, l’égalité étant réalisée pour tous les points appartenant au segment [AB], et uniquement pour eux. <br>
+	• L’élève reporte une distance, compare deux distances à l’aide d’un compas ou d’une mesure effectuée avec une règle graduée. <br>
+	• L’élève connait la définition du milieu d’un segment et s’appuie sur elle pour le construire selon les outils dont il dispose : par pliage, en utilisant un guide âne, une règle graduée ou un compas et une règle non graduée. 
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td> • Tracer à la règle et à l’équerre des droites, segments, perpendiculaires et parallèles </td>
+        <td> • Trace une perpendiculaire passant par A extérieur à (d) </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Connaitre les définitions d’un cercle, d’un disque, d’un rayon, d’un diamètre, d’une corde.</td>
+        <td>• Le cercle est défini comme l’ensemble des points équidistants d’un point appelé centre.<br>
+            • Le disque est défini comme l’ensemble des points situés à une distance inférieure ou égale à un point donné appelé centre.<br>
+            • L’élève distingue un cercle d’un disque.<br>
+            • Le mot « rayon » désigne indifféremment un segment joignant un point du cercle à son centre et la longueur de ce segment.<br>
+            • Le mot « diamètre » désigne indifféremment un segment joignant deux points du cercle et passant par son centre et la longueur de ce segment.<br>
+            • Une corde d’un cercle est définie comme un segment reliant deux de ses points.<br>
+	• L’élève sait que le diamètre est le double du rayon et qu’il est supérieur ou égal à la longueur de toutes les cordes. 
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Comprendre la définition d’un cercle et celle d’un disque sous la forme d’ensembles de points.</td>
+        <td>• L’élève sait interpréter géométriquement des égalités et des inégalités de distances à un point.<br>
+            • Il sait que : ► si un point A appartient au cercle de centre O et de rayon 2 cm, alors OA = 2 cm et, si OB = 2 cm, alors le point B appartient au cercle de centre O et de rayon 2 cm. ► si un point D n’appartient pas au cercle de centre O et de rayon 2 cm, alors OD ≠ 2 cm et, si OE ≠ 2 cm, alors le point E n’appartient pas au cercle de centre O et de rayon 2 cm. Il admet alors que le cercle de centre O et de rayon 2 cm est l’ensemble des points situés à 2 cm de O.<br>
+            • L’élève constate que : ► si OF ⩽ 2 cm, alors le point F appartient au disque de centre O et de 
+rayon 2 cm ; ► si OG > 2 cm, alors le point G n’appartient pas au disque de centre O et de rayon 2 cm. Il admet alors que le disque de centre O et de rayon 2 cm est l’ensemble des points dont la distance à O est inférieure ou égale à 2 cm.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Résoudre des problèmes mettant en jeu des distances à un point.</td>
+        <td>• Par exemple, l’élève reproduit un schéma à l’échelle (1 cm représente 1 m) et détermine la zone dans laquelle une chèvre peut brouter, attachée à une corde de 8 m fixée à un point donné.</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 5 -->
+<button class="accordion green">
+<a href="https://www.maths-et-tiques.fr/telech/25Proportion.pdf" target="_blank">  
+  Séquence 5 : Proportionnalité
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="7"> • Reconnaitre une situation de proportionnalité <br>
+• Tableau de proportionnalité <br>
+• Tableau et combinaison de colonnes <br>
+• Passage à l'unité <br>
+• Coefficient de proportionnalité <br>
+• Reconnaitre un tableau de proportionnalité
+ </td>
+
+        <td> 
+	• Connaitre la définition de la proportionnalité entre deux grandeurs et la mettre en lien avec des expressions de la vie courante. <br>
+	• Identifier si une situation relève du « modèle » de la proportionnalité.   
+	</td>
+        <td> 
+	• L’élève sait que deux grandeurs sont proportionnelles si, en multipliant les mesures de l’une par un même nombre (non nul), on obtient les mesures de l’autre.<br>
+        • Il sait que des locutions du type « prix au kilo » ou « nombre de feuilles imprimées par minute » traduisent la proportionnalité des grandeurs évoquées. <br>
+	• L’élève est sensibilisé au « modèle » de la proportionnalité. Par exemple, des questions comme les suivantes donnent lieu à un débat au 
+sein de la classe. ► Un paquet de gâteaux coute habituellement 1,20 €. Lors d’une promotion, un magasin propose la vente de ces gâteaux par lots de 4 paquets. Peut-on prévoir le prix du lot ? ► Si on connait le nombre de véhicules ayant franchi un péage entre 7 h du matin et 7 h 15, peut-on prévoir le nombre de véhicules qui le franchiront entre 7 h et 7 h 30 ? Et entre 12 h et 12 h 30 ? ► La hauteur classique des marches d’un escalier varie entre 17 cm et 19 cm. Peut-on estimer de quelle hauteur on s’élève si on gravit 5 marches ? 
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Résoudre un problème de proportionnalité en choisissant une procédure adaptée : propriété de linéarité pour la multiplication ou l’addition, retour à l’unité. </td>
+        <td>
+	• L’élève sait que, dans une situation relevant du modèle de proportionnalité, une seule paire de données suffit pour obtenir toutes les autres. Par exemple, il sait résoudre le problème suivant : « Un cultivateur vend des pommes de terre au poids. Léo paie 5 € pour un sac de 2,5 kg. Quel prix doit payer Lilou pour deux sacs de 5 kg ? De quelle masse de pommes de terre dispose Paul qui a payé 15 € ? » <br>
+	• L’élève sait appliquer ensuite la propriété de linéarité additive pour calculer, par exemple, le prix de 12,5 kg de pommes de terre. <br>
+	• L’élève mobilise les relations entre les nombres entiers et les procédures de calcul mental apprises au cours moyen pour résoudre mentalement des problèmes du type : « Si 10 objets identiques coutent 22 €, combien coutent 15 de ces objets ? ». <br>
+	• Il mobilise ses connaissances sur les nombres décimaux pour résoudre un problème du type : « Si des pommes sont vendues au poids et que 5 kg 
+coutent 10,50 €, quel est le prix de 3,5 kg ? ». De nombreuses méthodes sont possibles pour résoudre ce problème : retour à l’unité, relations multiplicatives (passage de 5 à 35, puis de 35 à 3,5), passage par le prix de 500 g ou de 2,5 kg, etc. Elles sont présentées et discutées en classe.
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>•  Représenter une situation de proportionnalité à l’aide d’un tableau ou de notations symboliques. </td>
+        <td> </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td>• S’initier à la résolution de problèmes d’échelles. </td>
+        <td>• L’élève verbalise la signification d’une échelle graphique. Par exemple, pour l’échelle graphique où le segment mesure 1 cm, la verbalisation peut se faire sous la forme « 1 cm sur le plan correspond à 10 m dans la réalité » ou « on a 10 m dans la réalité par centimètre sur le plan ».<br>
+            • L’élève sait utiliser une échelle graphique pour déterminer des longueurs réelles à partir de mesures réalisées sur une carte, sur un plan ou sur une image (par exemple celle d’une cellule en sciences de la vie et de la Terre). </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="accordion green">
+<a href="https://www.maths-et-tiques.fr/telech/25Tab_Graph.pdf" target="_blank"> 
+  Séquence 6 : Probabilités n°1 (rappels)
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+ <tbody><td rowspan="7"> • Expérience aléatoire <br>
+• Issues d'une expérience aléatoire <br>
+• Comparer des probabilités <br>
+• Issues de probabilités différentes <br>
+• Indépendance d'expériences aléatoires <br>
+• Evaluer une probabilité
+ </td>
+     <tr>
+<td>
+  <span style="color: grey;">
+• Identifier toutes les issues possibles lors d’une expérience aléatoire simple.<br>
+• Identifier toutes les issues réalisant un évènement dans une expérience aléatoire simple. </span>
+</td>
+<td>
+  <span style="color: grey;"> • Dans l’expérience qui consiste à tirer une carte dans un jeu de 52 cartes,
+l’élève sait donner la liste de toutes les issues qui réalisent chacun des
+évènements suivants :
+► « tirer un roi » ;
+► « tirer une figure » ;
+► « tirer un as rouge » ;
+► « tirer le neuf de trèfle ». <br>
+• Dans l’expérience qui consiste à lancer un dé à six faces, l’élève identifie
+toutes les issues qui réalisent chacun des évènements suivants :
+► « obtenir un nombre pair » ;
+► « obtenir un multiple de 3 » ;
+► « obtenir un diviseur de 10 ». 
+</span>
+</td>
+<td><a href="#">Lien à ajouter</a></td>
+</tr>
+
+<tr>
+<td>
+  <span style="color: grey;"> • Dans une situation d’équiprobabilité, lors d’une expérience aléatoire simple, exprimer la probabilité d’un évènement sous la forme « a chances sur b ».<br>
+ • Comparer des probabilités dans des cas simples.
+ </span>
+</td>
+<td>
+  <span style="color: grey;"> 
+• L’élève sait qu’il y a « une chance sur six » d’obtenir un « 4 » en lançant un dé classique. <br>
+• L’élève sait qu’il y a autant de chances d’obtenir un « 6 » qu’un « 4 » en lançant un dé classique et que cette probabilité est égale à « une chance sur six ». <br>
+• L’élève sait dire et justifier qu’il y a « treize chances sur cinquante-deux » d’obtenir un pique en tirant une carte au hasard dans un jeu de 52 cartes et « quatre chances sur cinquante-deux » d’obtenir un as. <br>
+• L’élève sait dire qu’il y a plus de chances d’obtenir un pique que d’obtenir un as en tirant une carte dans un jeu de 52 cartes. <br>
+• L’élève sait dire si une probabilité donnée sous la forme « a chances sur b » est supérieure, égale ou inférieure à « une chance sur deux », et justifier sa réponse en comparant a avec la moitié de b. <br>
+• L’élève sait colorier chacune des billes du sac ci-contre, soit en rouge, soit en vert, de façon à ce qu’il y ait une chance sur deux d’obtenir une bille verte lorsque l’on tire au hasard, sans regarder, une bille du sac.
+</td>
+<td><a href="#">Lien à ajouter</a></td>
+</tr>
+
+<tr>
+<td>
+  <span style="color: grey;"> • Comprendre la notion d’indépendance lors de la répétition de la même expérience aléatoire.
+ </span>
+</td>
+<td>
+  <span style="color: grey;"> 
+• L’élève sait que, lorsqu’il répète une même expérience dans des conditions identiques, les résultats antérieurs n’ont aucune incidence sur la probabilité d’obtenir un résultat donné. Par exemple, il sait que lorsqu’il lance une pièce de monnaie non truquée, s’il a obtenu trois fois « face » lors des trois premiers lancers, alors au quatrième lancer, il y a toujours exactement une chance sur deux qu’il obtienne « face » et une chance sur deux qu’il obtienne « pile ». <br>
+• L’élève sait résoudre un exercice comme le suivant : « Anissa jette trois fois de suite la même pièce. Elle obtient dans l’ordre les résultats suivants : FACE – PILE – FACE. Elle jette la pièce une quatrième fois. Penses-tu que le quatrième résultat a plus de chances d’être PILE que FACE, a plus de chances d’être FACE que PILE, ou, a autant de chances d’être PILE que FACE ? Explique ta réponse. »
+</td>
+<td><a href="#">Lien à ajouter</a></td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 7 -->
+<button class="accordion violet">
+<a href="https://www.maths-et-tiques.fr/telech/25Angles.pdf" target="_blank">  
+  Séquence 7 : Angles n°1
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr><td rowspan="7"> • Définition et vocabulaire <br>
+• Classification des angles <br>
+• Mesurer un angle avec un rapporteur <br>
+• Tracer un angle avec un rapporteur <br>
+• Construire un triangle avec un ou deux angles donnés <br>
+• Bissectrice d'un angle
+ </td>
+
+        <td>• Connaitre et utiliser les angles ainsi que le lexique et les notations qui s’y rapportent : angle droit, angle plat, angle plein, angle nul, angle aigu, angle obtus, angles opposés par le sommet, angles adjacents, angles supplémentaires.</td>
+        <td>• Deux demi-droites de même origine définissent deux secteurs angulaires, qu’on assimile à des angles : un angle saillant et un angle rentrant, ou deux angles plats. Hormis l’angle plein et l’angle plat, le programme se limite aux angles saillants. <br>
+            • La notion mathématique d’angle peut être illustrée par l’ouverture d’un éventail, le déplacement de l’aiguille d’une horloge par rapport à une position fixe ou l’ouverture d’un compas. <br>
+            • L’élève verbalise et utilise la notation adaptée pour désigner chacun des objets suivants : sommet, côté, demi-droites qui délimitent un angle. <br>
+            • Il utilise les notations : ∠ABC, Â, ∠xOy.<br>
+            • Il compare des angles par superposition ou à l’aide d’un gabarit. Il sait déterminer si deux angles sont égaux. Il sait reproduire un angle donné en utilisant un gabarit. <br>
+            • L’élève sait que deux droites sécantes se coupent en formant quatre angles saillants qui constituent deux paires d’angles opposés par le sommet. À l’aide d’un gabarit ou d’un rapporteur, il constate que deux angles opposés par le sommet sont de même mesure. Il admet et connait cette propriété. L’élève sait que, si deux droites sécantes se coupent en formant quatre angles égaux, alors les angles obtenus sont des angles droits. <br>
+            • Par exemple, il fabrique un angle droit à l’aide d’une feuille de papier pliée en quatre. Il illustre les liens entre angle droit, angle plat et angle plein, à l’aide de cette feuille de papier.<br>
+            • L’élève connait la définition des angles adjacents et celle des angles supplémentaires.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Mesurer un angle.<br>
+            • Construire un angle de mesure donnée.</td>
+        <td>• L’élève connait les mesures en degrés de l’angle droit et de l’angle plat. Il en déduit que l’angle plein mesure 360° et comprend que l’angle nul mesure 0°. <br>
+            • Par pliage et superposition, l’élève partage l’angle plat en deux, en trois, en quatre ou en six angles deux à deux adjacents et égaux et associe une mesure aux angles obtenus.  <br>
+            • Il connait les mesures des angles de l’équerre qu’il utilise.  <br>
+            • Un angle mesurant 1° peut être obtenu à partir du partage de l’angle plat en 180 angles deux à deux adjacents et égaux.   <br>
+            •  L’élève utilise un rapporteur pour mesurer un angle en degré, pour comparer deux angles, pour construire un angle de mesure donnée en degré. <br>
+            • En lien avec les déplacements, il relie quart de tour à angle droit, demi-tour à angle plat, tour complet à angle plein, et connait les mesures en degrés de chacun de ces angles.
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Connaitre la définition de la bissectrice d’un angle.<br>
+            • Construire une bissectrice à l’aide du compas.</td>
+        <td>• La bissectrice d’un angle saillant est définie comme la droite qui partage cet angle en deux angles adjacents égaux.<br>
+            • L’élève observe, puis admet, que la bissectrice d’un angle est l’axe de symétrie de cet angle.<br>
+            • L’élève construit la bissectrice d’un angle par pliage, puis à l’aide d’un 
+rapporteur.<br>
+            • Par exemple, l’élève élabore un programme de construction permettant à un camarade de reproduire la figure représentant une tête d’oiseau.
+</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Utiliser les propriétés de la bissectrice dans une figure géométrique.</td>
+        <td>• L’élève sait que tout point de la bissectrice est équidistant des côtés de l’angle.<br>
+            • Il utilise cette propriété pour résoudre des problèmes simples de construction ou de justification.</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+
+ <tr>
+        <td>• Construire des triangles.
+</td>
+        <td>• L’élève dessine à main levée un triangle en faisant figurer le codage correspondant aux données de l’énoncé.<br>
+            • L’élève construit un triangle connaissant : 
+► les longueurs des trois côtés, lorsque la construction est possible ; 
+► les longueurs de deux côtés et l’angle compris entre ces deux côtés ; 
+► la longueur d’un côté et les deux angles qui lui sont adjacents.
+</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 8 -->
+<button class="accordion">
+<a href="https://www.maths-et-tiques.fr/telech/25Operations.pdf" target="_blank">  
+  Séquence 8 : Additions, soustractions, multiplications
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody><td rowspan="7"> • Somme et différence de nombres décimaux<br>
+• Produit de nombres décimaux<br>
+• Rédaction d'une résolution de problème<br>
+• Ordre de grandeur
+ </td>
+
+      <tr>
+        <td>• Additionner et soustraire des nombres décimaux.</td>
+        <td>• L’élève entretient les connaissances qu’il a acquises au cours moyen et les mobilise dans le cadre de la résolution de problèmes.<br>
+            • Il identifie les opérations à effectuer.<br>
+            • Il s’appuie sur des représentations (ex. : schémas en barres) si nécessaire.<br>
+            • Il effectue des additions et des soustractions en les posant par écrit ou mentalement, selon les nombres en jeu.<br>
+            • Il estime a priori le résultat et le contrôle a posteriori.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Multiplier un nombre entier ou un nombre décimal par 0,1, par 0,01 et par 0,001.<br>
+	• Connaitre le lien entre multiplication par 0,1 / 0,01 / 0,001 et division par 10 / 100 / 1 000.
+	</td>
+        <td>• L’élève sait que multiplier un nombre par 0,1 revient à en prendre le dixième, en lien avec les fractions et les conversions d’unités.<br>
+            • Il constate que multiplier un nombre décimal par 0,1 donne un résultat dix fois plus petit que le nombre initial.<br>
+            • Il comprend que « multiplier » ne signifie pas toujours « rendre plus grand ».<br>
+	• L’élève verbalise que « multiplier par 0,1, c’est diviser par 10 », etc.<br>
+            • Il mémorise les égalités telles que :<br>
+            &nbsp;&nbsp;10 × 0,1 = 1 ; 0,1 × 0,1 = 0,01 ; 0,1 × 0,01 = 0,001.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Comprendre le sens de la multiplication de deux nombres décimaux.<br>
+            • Calculer le produit de deux nombres décimaux.<br>
+            • Contrôler les résultats à l’aide d’ordres de grandeur.<br>
+            • Résoudre des problèmes mettant en jeu des multiplications entre des nombres décimaux.</td>
+        <td>• Le sens de la multiplication est illustré à partir de situations géométriques (ex. : aire d’un rectangle). Par exemple, la multiplication de 3,7 par 2,9, est illustrée par le calcul de l’aire d’un rectangle de 3,7 dm de longueur et 2,9 dm de largeur. L’élève convertit ces dimensions en centimètre. Le produit des deux entiers 37 et 29, qui est la mesure de l’aire en cm² est ensuite convertie en dm2 et fournit le résultat de la multiplication de 3,7 par 2,9. <br>
+            • L’élève contrôle systématiquement le résultat obtenu à l’aide d’un ordre de grandeur. Ainsi, il sait a priori que le produit 3,7 × 2,9 est proche de 4 × 3 = 12 (ou qu’il est de l’ordre de 10), ce qu’il vérifie a posteriori. La référence à l’aire du rectangle permet de justifier que 3,7 × 2,9 = 2,9 × 3,7. La propriété de commutativité est généralisée au produit de tous les décimaux. Pour automatiser la connaissance de cette procédure l’élève calcule tout autant des produits du type 8,2 × 0,01 que du type 0,01 × 8,2. <br>
+            • Une fois que ce sens de la multiplication, qui sort du cadre d’une addition itérée, est compris par l’élève, celui-ci effectue des multiplications qui peuvent mobiliser les propriétés d’associativité et de commutativité. Sans en citer le nom, le professeur les explicite comme, par exemple pour les calculs suivants : ► 0,4 × 3 = (0,1 × 4) × 3 = 0,1 × (4 × 3) = 0,1 × 12 = 1,2 ► 0,4 × 0,3 = (0,1 × 4) × (0,1 × 3) = 0,1 × 4 × 0,1 × 3 =  0,1 × 0,1 × 4 × 3 = (0,1 × 0,1) × (3 × 4) = 0,01 × 12 = 0,12<br>
+            • Il est essentiel que l’automatisation du positionnement de la virgule dans le résultat d’une multiplication soit précédée par ce type de décompositions. <br>
+            • Lors de la résolution d’un problème dont l’objectif est de travailler le sens de la multiplication et non pas sa technique, ou dans le cas de calculs chronophages, l’élève peut, selon ses besoins, disposer d’une calculatrice. 
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 9 -->
+<button class="accordion red">
+<a href="https://www.maths-et-tiques.fr/telech/25Nombres1.pdf" target="_blank">  
+  Séquence 9 : Médiatrices
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr><td rowspan="7"> • Définition<br>
+• Propriétés<br>
+• Construction au compas<br>
+• Médiatrices des côtés d'un triangle et cercle circonscrit au triangle
+ </td>
+
+        <td>• Connaitre la définition de la médiatrice d’un segment.<br>
+            • Comprendre et utiliser la propriété caractéristique de la médiatrice d’un segment.</td>
+        <td>• La médiatrice d’un segment est définie comme la droite perpendiculaire au segment passant par son milieu.<br>
+            • L’élève observe, puis admet, que la médiatrice est un axe de symétrie du segment.Il construit la médiatrice d’un segment par pliage. <br>
+            • Il observe alors que, si un point est sur la médiatrice d’un segment, alors il est équidistant de ses extrémités. <br>
+            • L’élève observe également que, si un point n’est pas sur la médiatrice d’un segment, alors il est plus proche de l’une des extrémités que de l’autre. <br>
+            • Il admet que, si un point est à égale distance des extrémités d’un segment, alors il appartient à la médiatrice de ce segment.<br>
+            • L’élève connait la propriété caractéristique de la médiatrice d’un segment qu’il verbalise sous la forme : « la médiatrice d’un segment est l’ensemble des points équidistants des extrémités de ce segment ». Il l’utilise pour justifier la construction de la médiatrice à l’aide d’un compas et d’une règle non graduée.<br>
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Résoudre des problèmes en s’appuyant sur la propriété caractéristique de la médiatrice.</td>
+        <td>• Par exemple, l’élève place le milieu d’une corde d’un cercle de centre connu à l’équerre et justifie sa construction.<br>
+            • Par exemple, il détermine le centre inconnu d’un cercle en utilisant les médiatrices et verbalise son raisonnement.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+	<tr>
+        <td>•  Savoir que les médiatrices d’un triangle sont concourantes.  <br>
+	•  Connaitre et construire le cercle circonscrit à un triangle.
+	</td>
+        <td>• L’élève comprend pourquoi les trois médiatrices d’un triangle sont concourantes et il est capable de restituer les arguments de la preuve de ce résultat. <br>
+            • Il en déduit l’existence du cercle circonscrit à un triangle et sait le construire. </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 10 -->
+<button class="accordion">
+<a href="https://www.maths-et-tiques.fr/telech/25Divisions1.pdf" target="_blank">  
+  Séquence 10 : Divisions
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="7">•  Division euclidienne<br>
+• Exemple de résolution de problème avec la division euclidienne<br>
+• Division décimale<br>
+• Arrondi d'un nombre
+ </td>
+
+        <td>• Effectuer la division euclidienne d’un nombre entier par un entier inférieur à 100.<br>
+	•  Résoudre des problèmes mettant en jeu des divisions euclidiennes.
+	</td>
+        <td>• Au cours moyen, l’élève a appris à effectuer, en la posant, la division euclidienne d’un nombre entier par un nombre entier inférieur à 10. En 6e, le cadre est élargi, à la division euclidienne par un nombre entier inférieur à 100. Lors des différentes étapes de l’algorithme, la verbalisation d’expressions du type « combien de fois peut-on mettre b dans a ? » ou encore « combien de fois a contient-il b ? » permet de conforter le sens « quotition » de la division. Lorsque l’opération est effectuée, l’élève désigne le dividende, le diviseur, le quotient et le reste.<br>
+	• Il sait reconnaître les problèmes relevant de la division euclidienne :<br>
+            &nbsp;&nbsp;- Nombre de verres de 20 cL dans 1,25 L.<br>
+            &nbsp;&nbsp;- Nombre de bouquets de 18 roses à partir de 295 roses.<br>
+            &nbsp;&nbsp;- Nombre de bus de 45 places pour 536 passagers.<br>
+	• Il sait interpréter les résultats obtenus et peut insérer les unités dans la présentation de ses calculs. Par exemple, il peut écrire 295 roses = 16 × 18 roses + 7 roses.  <br>
+	• L’élève fait le lien entre division euclidienne et conversion d’unités de durée (par exemple, transformation de minutes en heures et minutes).  <br>
+	• Il sait utiliser une division euclidienne pour écrire une fraction sous la forme d’un nombre mixte. 
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Diviser un nombre décimal par un entier &lt; 10.<br>
+            • Résoudre des problèmes mettant en jeu des divisions décimales.</td>
+        <td>• L’algorithme de la division posée, étudié au cours moyen, avec un dividende décimal et un diviseur inférieur à 10, est entretenu. Il était limité au cas où on s’arrête au plus tard au centième avec un reste nul, comme, par exemple, pour effectuer 9 855 ÷ 6 ; 7 854 ÷ 8 ou 986,3 ÷ 5. <br>
+            • En 6e, on élargit ce cadre avec l’objectif de faire comprendre à l’élève deux aspects essentiels liés aux fractions : ► lorsque l’algorithme de la division décimale de a par b s’arrête, la fraction a/b est un nombre décimal, par exemple, la division posée 9 855 ÷ 6 dont le résultat est 1 642,5. La fraction 9 855/6  est donc un nombre décimal ;► l’algorithme de certaines divisions posées ne s’arrête jamais, par exemple pour 10 ÷ 3 ou 73 ÷ 6. L’élève comprend que ce résultat est lié au fait que les fractions 10/3 et 73/6 ne sont pas des nombres décimaux.<br>
+            • Le sens de la division comme opération inverse de la multiplication, vu sur les nombres entiers au cours élémentaire, est étendu aux décimaux non entiers. Ainsi, l’élève sait que, pour tout nombre décimal a, et tout nombre entier b non nul : (a ÷ b) × b = a et (a × b) ÷ b = a.<br>
+            • L’élève identifie les situations relevant d’une division : le calcul d’une 
+part ou celui du nombre de parts. Par exemple : ► il sait quelle opération poser et il effectue le calcul permettant de déterminer,s’il verse 1,5 L de jus d’orange dans 8 verres de façon équitable, combien de centilitres contiendra chaque verre ; ►il sait quelle opération poser et il effectue le calcul permettant de déterminer combien de verres de 20 cL sont contenus dans une bouteille de 1,5 L de jus d’orange. Il interprète le résultat (7 verres et demi) dans le contexte de l’exercice.<br>
+            • Concernant la technique, l’élève a éventuellement recours à la calculatrice dans le cadre de la résolution d’un problème mettant en jeu un diviseur qui est un nombre entier ayant au moins deux chiffres. Par exemple, il peut utiliser une calculatrice pour résoudre l’exercice suivant : Léa a payé 57,40 € pour 35 L d’essence. Quel est le prix d’un litre d’essence ? <br>
+	    • En revanche, il sait résoudre sans calculatrice l’exercice suivant : Léo a acheté un coupon de tissu dont le prix est 3 € le mètre. Il a payé 15,60 €. Quelle est la longueur du coupon acheté ?
+             </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 11 -->
+<button class="accordion red">
+<a href="https://www.maths-et-tiques.fr/telech/25Sym_axe.pdf" target="_blank">  
+  Séquence 11 : Symétrie axiale
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="7"> • Approche expérimentale (pliage) <br>
+• Symétrique d'un point <br>
+• Symétrique d'une figure élémentaire <br>
+• Propriétés de conservation
+ </td>
+
+        <td> • Connaitre la définition du symétrique d’un point par rapport à une droite. <br>
+	• Connaitre et utiliser les propriétés de la symétrie axiale pour effectuer des constructions. 
+	</td>
+        <td> • Étant donnés une droite (d) et un point M n’appartenant pas à (d), l’élève sait que le symétrique de M par rapport à (d) est le point M’ tel que (d) est la médiatrice du segment [MM’]. <br>
+        • Il sait également que, si le point M appartient à (d), alors il est son propre symétrique. <br>
+	• L’élève sait que si M’ est le symétrique de M, alors M est le symétrique de M’.<br>
+	• L’élève constate par pliage la conservation des distances par une symétrie axiale, avant d’admettre et d’utiliser cette propriété. <br>
+	• Il constate sur des figures la conservation des angles par une symétrie axiale, avant d’admettre et d’utiliser cette propriété. <br>
+	• L’élève sait que le symétrique d’un point est un point, que le symétrique d’une droite (respectivement d’une demi-droite) est une droite (respectivement une demi-droite), que le symétrique d’un segment est un segment de même longueur, que le symétrique d’un angle est un angle de même mesure, que le symétrique d’un cercle est un cercle de même rayon. <br>
+	• L’élève construit le symétrique d’un point ou d’une figure simple en utilisant des instruments et un support imposés (équerre et règle graduée ; équerre et compas ; compas seul ; papier quadrillé ; papier pointé ou papier uni). 
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 12 -->
+<button class="accordion">
+<a href="https://www.maths-et-tiques.fr/telech/25Fra1.pdf" target="_blank">  
+  Séquence 12 : Fractions n°1
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr><td rowspan="8"> • Fraction partage<br>
+• Vocabulaire (numérateur, dénominateur et lecture)<br>
+• Egalité de quotients<br>
+• Comparer deux fraction de même dénominateur<br>
+• Comparer des quotients à 1<br>
+• Encadrer une fraction entre deux entiers consécutifs<br>
+• Nombre mixte<br>
+• Abscisse fractionnaire d'un point
+ </td>
+
+        <td>• Relier une fraction au résultat exact de la division de son numérateur par son dénominateur.</td>
+        <td>• L’élève constate que la fraction a/b est égale au résultat, de la division de l’entier a par l’entier b non nul dans des cas particuliers : ► lorsque a est un multiple de b ; ► lorsque a ÷ b est un nombre décimal non entier. Par exemple, il sait 
+que 3/4 = 0,75 et constate que 3 ÷ 4 = 0,75 en posant la division décimale de 3 par 4. Il interprète alors la fraction 34comme le quart de 3.<br>
+            • L’élève apprend que, pour tout entier a et tout entier b non nul, la 
+fraction a/b est le résultat exact de la division de a par b.  <br>
+            • Le cas particulier b = 1 est explicité. L’élève sait que a/1= a ÷ 1 = a.
+	.</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Comprendre et connaitre la définition du quotient d’un entier a par un entier b non nul.<br>
+	• Compléter des égalités à trou multiplicatives.  </td>
+        <td>• L’élève constate que b × a/b = a dans des cas particuliers : ► lorsque a est un multiple de b ; ► lorsque a/b est un nombre décimal non entier.<br>
+            • L’égalité a/b = a ÷ b et le fait que la multiplication est l’opération inverse de la division permettent d’institutionnaliser le résultat et de le verbaliser sous la forme « Le quotient de a par b est le nombre qui, multiplié par b, donne a ». <br>
+            • La commutativité du produit d’un entier par une fraction, justifiée par 
+son interprétation comme aire d’un rectangle, permet d’écrire b × a/b= a/b × b = a. <br>
+	• L’élève utilise la notion de quotient et la propriété de commutativité pour compléter des égalités à trou des types : b × … = a ; … × b = a, où a est un entier et b un entier non nul. <br>
+	• Il importe de proposer aux élèves des égalités à trou leur permettant de comprendre que, dans certains cas, l’écriture fractionnaire est la seule manière de représenter le nombre manquant. 
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Placer une fraction sur une demi-droite graduée dans des cas simples.<br>
+	• Graduer un segment de longueur donnée. </td>
+        <td>• L’élève sait placer a/b sur une demi-droite graduée en b parts égales.<br>
+            • Il peut, selon la situation, utiliser le pliage d'une bande ou un guide-âne pour créer la graduation.<br>
+            • Il écrit la valeur de chaque graduation sous forme fractionnaire.</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+	<tr>
+        <td>•  Savoir que la fraction a/b peut représenter un nombre entier, un nombre décimal non entier ou un nombre non décimal. </td>
+        <td>• L’élève connait quelques fractions qui représentent des nombres non décimaux.  </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 13 -->
+<button class="accordion violet">
+<a href="https://www.maths-et-tiques.fr/telech/25Angles.pdf" target="_blank">  
+  Séquence 13 : Angles n°2
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+ <tr><td rowspan="7"> • Alignement et angle plat <br>
+• Angles adjacents <br>
+• Angles opposés par le sommet <br>
+• Somme des angles d'un triangle <br>
+• Angles des triangles équilatéraux, isocèles et rectangle <br>
+• Angles d'une équerre
+ </td>
+
+        <td>• Construire des triangles.<br>
+	•Connaitre et utiliser les propriétés angulaires des triangles particuliers : triangle rectangle, triangle isocèle, triangle équilatéral.
+</td>
+        <td>• L’élève dessine à main levée un triangle en faisant figurer le codage correspondant aux données de l’énoncé.<br>
+            • L’élève construit un triangle connaissant : 
+► les longueurs des trois côtés, lorsque la construction est possible ; 
+► les longueurs de deux côtés et l’angle compris entre ces deux côtés ; 
+► la longueur d’un côté et les deux angles qui lui sont adjacents.<br>
+            • L’élève connait et utilise les codes pour les angles droits et pour les égalités d’angles.<br>
+	• Il connait la définition et la caractérisation sous la forme d’égalité d’angles d’un triangle isocèle et d’un triangle équilatéral. 
+</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>•  Connaitre la valeur de la somme des mesures des angles d’un triangle. <br>
+	•   L’utiliser pour calculer des angles, effectuer des constructions et résoudre des problèmes. 
+	</td>
+        <td>• L’élève s’appuie sur l’accolement de triangles identiques pour constater que la somme des angles d’un triangle est un angle plat avant d’admettre ce résultat. <br>
+	• L’élève démontre que, dans un triangle équilatéral, chaque angle mesure 60° et il connait ce résultat.<br>
+	• L’élève sait calculer la mesure des trois angles d’un triangle isocèle à partir de l’une d’elles. <br>
+	• Par exemple, l’élève construit un triangle ABC isocèle en A, sachant que AB = 4 cm et BAC ̂=30°. <br>
+        • Par exemple, à l’aide d’instruments géométriques, l’élève reproduit une figure à main levée  </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>• Connaitre et utiliser les angles ainsi que le lexique et les notations qui s’y rapportent : angle droit, angle plat, angle plein, angle nul, angle aigu, angle obtus, angles opposés par le sommet, angles adjacents, angles supplémentaires.</td>
+        <td>• Deux demi-droites de même origine définissent deux secteurs angulaires, qu’on assimile à des angles : un angle saillant et un angle rentrant, ou deux angles plats. Hormis l’angle plein et l’angle plat, le programme se limite aux angles saillants. <br>
+            • La notion mathématique d’angle peut être illustrée par l’ouverture d’un éventail, le déplacement de l’aiguille d’une horloge par rapport à une position fixe ou l’ouverture d’un compas. <br>
+            • L’élève verbalise et utilise la notation adaptée pour désigner chacun des objets suivants : sommet, côté, demi-droites qui délimitent un angle. <br>
+            • Il utilise les notations : ∠ABC, Â, ∠xOy.<br>
+            • Il compare des angles par superposition ou à l’aide d’un gabarit. Il sait déterminer si deux angles sont égaux. Il sait reproduire un angle donné en utilisant un gabarit. <br>
+            • L’élève sait que deux droites sécantes se coupent en formant quatre angles saillants qui constituent deux paires d’angles opposés par le sommet. À l’aide d’un gabarit ou d’un rapporteur, il constate que deux angles opposés par le sommet sont de même mesure. Il admet et connait cette propriété. L’élève sait que, si deux droites sécantes se coupent en formant quatre angles égaux, alors les angles obtenus sont des angles droits. <br>
+            • Par exemple, il fabrique un angle droit à l’aide d’une feuille de papier pliée en quatre. Il illustre les liens entre angle droit, angle plat et angle plein, à l’aide de cette feuille de papier.<br>
+            • L’élève connait la définition des angles adjacents et celle des angles supplémentaires.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="accordion">
+<a href="https://www.maths-et-tiques.fr/telech/25Fra2.pdf" target="_blank">  
+  Séquence 14 : Fractions n°2
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+	<tr><td rowspan="7"> • Fraction et nombre <br>
+• Multiplier une fraction par un nombre <br>
+• Prendre la fraction d'un nombre <br>
+• Somme et différence de fractions
+ </td>
+
+        <td>• Utiliser une multiplication pour appliquer une fraction à un nombre entier. </td>
+        <td>• En début d’apprentissage, l’élève verbalise des calculs du type : 2/5 de 60, c’est 2 cinquièmes de 60, c’est-à-dire 2 fois un cinquième de 60, c’est-à-dire 2 fois 60/5; ainsi : 2/5× 60 = 2 × 60/5= 2 × 12 = 24. <br>
+            • Le professeur peut, selon des besoins des élèves, faire apparaitre sur 
+des exemples du type précédent que pour a, b, c (non nul), « b/c de a » est égal à (b/c) × a et à a × (b/c) qui est aussi égal à (b × a)/cet à b × (a/c) . <br>
+            • Le résultat est institutionnalisé sous la forme : « Pour calculer une fraction d’un nombre entier, on multiplie la fraction par le nombre ». </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>
+          • Établir des égalités de fractions.
+        </td>
+        <td>
+          • L’élève sait justifier que 7/3 = 14/6 par des représentations ou des placements sur demi-droites graduées.<br>
+	• Le résultat est institutionnalisé sous la forme « Le nombre représenté par une fraction ne change pas quand on multiplie ou quand on divise le numérateur et le dénominateur de celle-ci par un même nombre non nul ». <br>
+          • Il complète des égalités du type : 2/3 = .../9 ou 4/7 = 28/...<br>
+          • Il identifie les fractions égales à 7/4 parmi une liste.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>
+          • Comparer et encadrer des fractions.<br>
+          • Ordonner des fractions ou nombres mixtes.
+        </td>
+        <td>
+          • L’élève compare des fractions de même dénominateur ou de même numérateur.<br>
+          • Il compare des fractions à 1  et utilise ce moyen pour comparer certaines fractions comme, par exemple, 7/8 et 10/9. <br>
+	      •  Il compare certaines fractions à 1/2 comme, par exemple 5/12 et 6/11. <br>
+          • Il encadre une fraction entre deux entiers consécutifs.<br>
+          • Il sait ranger des fractions comme 5/3, 1, 7/6, 99/100, 1 + 1/3 dans l'ordre croissant.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>
+          • Additionner et soustraire des fractions.<br>
+          • Multiplier une fraction par un nombre entier.
+        </td>
+        <td>
+          •  L’élève sait additionner et soustraire des fractions de même dénominateur ou de dénominateurs multiples l’un de l’autre. <br> 
+	• Il sait additionner et soustraire des fractions de dénominateurs quelconques dans des cas simples. Par exemple, il sait calculer : 5/4+2/3 ; 7/2-3/5. <br>
+          • L’élève sait calculer le produit d’une fraction par un nombre entier, et connait sa propriété de commutativité. .<br>
+          </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+<tr>
+        <td>
+          •  Résoudre des problèmes mettant en jeu des fractions.<br>
+          • Inventer des problèmes mettant en jeu des fractions. 
+        </td>
+        <td>
+          • Par exemple, l’élève sait résoudre le problème suivant : « Mia a découpé son gâteau d’anniversaire en parts de différentes tailles. Leïla choisit une part égale au quart du gâteau et Léo choisit une part égale au sixième du gâteau. Quelle fraction du gâteau reste-t-il pour les autres invités ? » <br>
+          • Par exemple, l’élève invente un problème dont la résolution nécessite le calcul de 2/5+ 3/10 suivi de la soustraction de son choix.  <br>
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<button class="accordion green">
+<a href="https://www.maths-et-tiques.fr/telech/25Pourcent.pdf" target="_blank">  
+  Séquence 15 : Pourcentages
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+     <tbody>
+	<tr><td rowspan="7"> 
+• Notion de pourcentage<br>
+• Pourcentage d'un nombre<br>
+• Calculer un pourcentage
+ </td>
+
+        <td>
+          • Connaitre la définition d’un pourcentage  .<br>
+          •  Associer et utiliser différentes écritures d’un nombre décimal : écriture à virgule, fraction, nombre mixte, pourcentage.
+        </td>
+        <td>
+          • Par définition, si a est un entier naturel, a % est égal à a/100. On se limite à l’utilisation de pourcentages compris entre 0 % et 100 %, qui servent à exprimer des proportions et des probabilités. <br>
+          • L’élève sait qu’un même nombre admet plusieurs écritures. Dans le cadre d’une fraction supérieure à 1, il utilise l’écriture sous forme de nombre mixte, somme d’un nombre entier et d’une fraction inférieure à 1. Par exemple, il sait que :  25 % = 25/100 = 0,25 = 1/4 ; 35 % = 35/100 = 0,35 = 7/20.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+      <tr>
+        <td>
+          • Comprendre le sens d’un pourcentage.<br>
+          • Calculer une proportion et l’exprimer sous forme de pourcentage dans des cas simples.<br>
+	  • Appliquer un pourcentage à une grandeur ou un nombre.
+        </td>
+        <td>
+          • L’élève sait que 42 % signifie 42 g pour 100 g, et calcule la masse dans 200 g ou 50 g.<br>
+          • Il exprime une proportion (comme 2 boules blanches sur 10) en pourcentage.<br>
+          • Il déduit qu’un pourcentage est une fraction de dénominateur 100.<br>
+	  • L’élève sait que pour appliquer a %, on calcule a/100 × valeur.<br>
+          • Il utilise une échelle de pourcentage pour des cas simples (ex. : 20 % de 60 € = 12 €).<br>
+          • Il comprend que 100 % correspond à la totalité et que la proportion est toujours ≤ 1.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+<button class="accordion green">
+<a href="https://www.maths-et-tiques.fr/telech/25Tab_Graph.pdf" target="_blank"> 
+  Séquence 16 : Probabilités n°2
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+ <tbody>
+      <tr><td rowspan="7"> • Quantifier une probabilité<br>
+• Arbre de probabilité<br>
+• Tableau de probabilité
+ </td>
+
+        <td>
+          • Savoir que la probabilité d’un évènement est un nombre compris entre 0 et 1. 
+        </td>
+        <td>
+          • L’élève sait positionner un évènement sur une échelle de probabilité graduée de 0 à 1 en interprétant la situation. Par exemple : 
+► obtenir un 7 en lançant un dé à six faces numérotées de 1 à 6 ; 
+► obtenir un nombre entier compris entre 1 et 6 inclus en lançant un dé à 
+six faces ; 
+► obtenir pile en lançant une pièce équilibrée ; 
+► ne pas obtenir la bonne combinaison au loto ; 
+► obtenir 10 fois de suite la valeur 1 en lançant un dé à six faces.<br>
+          • L’élève sait que la probabilité d’un évènement impossible vaut 0 et que celle d’un évènement certain vaut 1. <br>
+          • Il fait le lien entre l’expression « une chance sur quatre » employée au cours moyen et la probabilité 1/4 (qui peut se lire 1 sur 4).
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td>
+          • Calculer des probabilités dans des situations simples d’équiprobabilité.<br>
+        </td>
+        <td>
+          • L’élève sait qu’une probabilité peut s’exprimer sous la forme d’une fraction, d’un nombre décimal ou d’un pourcentage. Par exemple, il calcule la probabilité d’obtenir une boule noire en piochant au hasard, sans regarder, une boule dans une urne contenant 3 boules noires et 7 boules blanches.  <br>
+          • L’élève colorie chacune des billes du sac ci-contre, soit en rouge, soit en bleu, de façon à ce que la probabilité d’obtenir une bille bleue lorsqu’on tire au hasard, sans regarder, une bille du sac, soit égale à 1/4 ou à 25 % ou à 0,25.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+<tr>
+        <td>
+          • Comparer des résultats d’une expérience aléatoire répétée à une probabilité calculée.<br>
+        </td>
+        <td>
+          • L’élève répète une même expérience aléatoire plusieurs fois, dans des conditions similaires, et calcule des proportions. Par exemple, chaque élève de la classe lance 20 fois de suite deux pièces de monnaie et note à chaque lancer le résultat obtenu (qui peut être deux fois FACE, une fois PILE et une fois FACE ou deux fois PILE). Tous les résultats obtenus sont mis en commun afin de calculer la proportion d’apparition de « deux fois PILE » parmi l’ensemble de tous les résultats obtenus. Cette proportion est comparée à la probabilité d’obtenir « deux fois PILE » vue au cours moyen.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+<button class="accordion violet">
+<a href="https://www.maths-et-tiques.fr/telech/25Perim.pdf" target="_blank">  
+  Séquence 17 : Périmètres et aires
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="7"> • Définitions<br>
+• Aire et périmètre du carré et du rectangle<br>
+• Utiliser une formule mathématique (présenter son calcul)<br>
+• Périmètre du disque<br>
+• Conversion d'aires<br>
+• Périmètre d'une portion de disque
+ </td>
+        <td>
+          • Savoir que le périmètre du disque est proportionnel à son diamètre.<br>
+          • Connaitre la formule du périmètre d’un disque.<br>
+          • Calculer le périmètre d’un disque.
+        </td>
+        <td>
+          • L’élève admet que le rapport entre le périmètre et le diamètre est un nombre constant noté π.<br>
+          • Il sait que π n’est pas un nombre décimal, et que 3,14 en est un arrondi.<br>
+          • Il apprend et utilise les formules : P = π × D ; P = 2 × π × R.<br>
+          • Il substitue les longueurs dans les formules pour calculer un périmètre.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td>
+          • Calculer des périmètres de figures composées.<br>
+          • Résoudre des problèmes impliquant des longueurs.
+        </td>
+        <td>
+          • L’élève calcule le périmètre de figures contenant des cercles ou des portions de cercle.<br>
+          • Il sait résoudre des problèmes comme celui de la piste d’athlétisme mesurant entre 400 m et 402,3 m.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+	<tr>
+        <td>
+          • Connaitre la formule de l’aire d’un carré ou d’un rectangle.<br>
+          • Calculer l’aire d’un carré ou d’un rectangle.
+        </td>
+        <td>
+          • L’élève verbalise que l’aire d’un carré est égale au produit de son côté par lui-même : aire = côté × côté = c × c.<br>
+          • Pour un rectangle, il écrit : aire = longueur × largeur = L × l.<br>
+          • Il effectue des calculs numériques illustrant la commutativité de la multiplication.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td>
+          • Effectuer des conversions d’aire.
+        </td>
+        <td>
+          • L’élève sait que 1 mm²  est l’aire d’un carré de 1 mm de côté et que 1 km² est l’aire d’un carré de 1 km de côté.<br>
+          • L’élève convertit en m² (respectivement en dm²) une aire donnée en dm² (respectivement en cm²) et inversement.<br>
+          • Par exemple, l’élève convertit 3,7 m² en dm² en s’appuyant sur l’égalité 1 m² = 100 dm². Il convertit 370 cm² en dm², en verbalisant que la mesure en dm² est 100 fois plus petite que la mesure en cm², ou que 1 cm² est le centième de 1 dm². Le recours à un tableau de conversion est déconseillé à ce stade de l’apprentissage. 
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence 18 -->
+<button class="accordion">
+<a href="https://www.maths-et-tiques.fr/telech/25Divisions1.pdf" target="_blank">  
+  Séquence 18 : Heure et durées
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="7"> •  Notion d'heure et de durée<br>
+•  Calculer une heure ou une durée<br>
+•  Convertir des durées
+ </td>
+        <td>•  Effectuer des calculs sur des horaires et des durées. </td>
+        <td>• Par exemple, l’élève résout un problème du type : D’après les informations ci-dessous : 
+► quel est le numéro du prochain bus ? 
+► dans combien de temps arrivera-t-il ? 
+► un ami te prévient qu’il te rejoindra dans 12 minutes. Pourrez-vous 
+prendre ensemble le bus 303 ?  </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+	<tr>
+        <td>• Convertir des durées.  </td>
+        <td>• L’élève sait répondre à des questions du type : « Combien font 609 h en semaines, jours et heures ? » ; « Combien font 34 990 s en heures, minutes et secondes ? » ; « Est-il plus long d’emprunter de l’argent à la banque sur 76 mois ou sur 5 ans ? ». 
+L’élève sait que : ► 0,5 h = 1/2h = 30 min ; 0,25 h = 1/4h = 15 min ; ► 0,75 h = 3/4h = 45 min ; 0,1 h = 1/10h = 6 min. <br>
+	• L’élève connait les écritures sexagésimale et décimale d’une durée. Dans le cadre de la résolution de problèmes, il passe de l’une à l’autre.  </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="accordion red">
+<a href="https://www.maths-et-tiques.fr/telech/25Para_Cube.pdf" target="_blank">  
+  Séquence 19 : Espace et volumes
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="7"> • Les solides<br>
+• Le centimètre cube
+ </td>
+        <td>
+          • Connaitre l’unité centimètre cube. 
+        </td>
+        <td>
+          • L’élève apprend que le centimètre cube est une unité de volume notée cm³; et que 1 cm³ est le volume d’un cube d’arête 1 cm. 
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td>
+          •  Comparer des volumes.  <br>
+          •  Déterminer un volume. 
+        </td>
+        <td>
+          • L’élève compare le volume de deux solides constitués d’assemblages de cubes identiques. <br>
+          • L’élève détermine le volume d’un assemblage de cubes d’arête 1 cm. 
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+ 	<tr>
+        <td>
+          • Voir dans l’espace des assemblages de cubes. 
+        </td>
+        <td>
+          • L’élève interprète différentes représentations planes d’un assemblage de cubes : dessin à main levée, perspective cavalière, patron. <br>
+          • À partir de la manipulation d’un assemblage de cubes ou d’une représentation comme la figure ci-contre, l’élève trace à main levée ou sur du papier quadrillé les différentes vues de cet assemblage : vue de dessus, vue de face, vue de gauche, vue de droite. <br>
+	  • Inversement, quatre vues d’un assemblage de cubes lui étant fournies, l’élève choisit parmi les représentations de plusieurs assemblages, celle qui correspond à ces vues.
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button class="accordion green">
+<a href="https://www.maths-et-tiques.fr/telech/25Tab_Graph.pdf" target="_blank"> 
+  Séquence transversale : Gestion de données 
+</a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemple(s) de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+ <tbody>
+      <tr><td rowspan="7"> blabla </td>
+        <td>
+          •  Planifier une enquête et recueillir des données.<br>
+          • Réaliser des mesures et les consigner dans un tableau. <br>
+        </td>
+        <td>
+          • L’élève mène seul, en binôme, ou à l’intérieur d’un groupe plus large, une enquête statistique portant sur la répartition d’un caractère dans une population. Pour cela, il définit la population à étudier, élabore un questionnaire et recueille les données, qu’il met éventuellement en commun avec ses camarades avant de les compiler dans un tableau.<br>
+          • L’élève réalise des mesures destinées à étudier l’évolution d’une grandeur en fonction d’une autre. Il consigne les résultats dans un tableau, puis les représente dans un repère par un ensemble de points. Il adapte le choix de l’origine et d’une graduation de chacun des axes aux mesures.
+	</td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+      <tr>
+        <td>
+          •  Construire un tableau simple pour présenter des données (observations, caractères).<br>
+        </td>
+        <td>
+          • Par exemple, l’élève construit un tableau en colonnes pour organiser les informations contenues dans le texte suivant, en précisant le titre de chaque colonne. « Des élèves ont relevé des températures et des taux d’hygrométrie dans la cour du collège à différentes heures d’une journée. À 8 h, il faisait 12 °C et il y avait 75 % d’humidité dans l’air ; à 10 h, la température était de 18 °C et le taux d’hygrométrie de 61 % ; à 12 h, la température était de 24 °C et le taux d’hygrométrie de 43 %, et enfin à 16 h, la température était de 22 °C et le taux d’hygrométrie de 42 %. » 
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+
+<tr>
+        <td>
+          •  Faire un choix en filtrant les données d’un tableau selon un critère.  <br>
+        </td>
+        <td>
+        </td>
+        <td><a href="#">Lien à ajouter</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence transversale : Initiation à la pensée informatique -->
+<button class="accordion white">
+  <a href="https://pix.fr" target="_blank">
+    Séquence transversale : Initiation à la pensée informatique
+  </a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemples de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr><td rowspan="7"> blabla </td>
+        <td> •  Identifier une instruction ou une séquence d’instructions. <br>
+	• Produire et exécuter une séquence d’instructions. 
+	</td>
+        <td> • L’élève manipule et identifie des instructions selon le contexte choisi : déplacements élémentaires, opérations mathématiques, etc. <br>
+	•  L’élève retrouve parmi plusieurs séquences d’instructions qui lui sont fournies, celle qui permet de dessiner un carré.<br>
+	•  L’élève dispose de cartes figurant les opérations mathématiques « ajouter 1 », « multiplier par 2 », « multiplier par 3 » :      Il les ordonne pour réaliser un programme de calcul, par exemple « Multiplier un nombre par 2. « Ajouter 1 au résultat. « Multiplier par 3 le nouveau résultat. » Il exécute ce programme de calcul à partir d’un nombre donné en entrée et obtient un nombre en sortie.<br>
+	•  L’élève interprète le schéma suivant dans lequel les flèches rouges représentent le parcours d’un bus. Il dispose de deux cartes d’instructions « Aller » et « Tourner dans la direction » ainsi que de cartes de lieu et de direction « à la bibliothèque », « à la mairie », « au stade », etc., « Est », « Ouest », etc. Il les ordonne pour retranscrire le parcours du bus en une séquence d’instructions.<br>
+	• À partir du trajet représenté en jaune sur la grille de nombres ci-dessous, 
+l’élève produit une séquence d’instructions permettant de se déplacer 
+selon le trajet imposé et de calculer la somme des nombres inscrits sur 
+les cases par lesquelles il passe. <br>
+        </td>
+        <td>
+<a href="#">Lien à ajouter</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>•  Répéter à la main une séquence d’instructions pour accomplir une tâche imposée. </td>
+        <td>• L’élève identifie et répète une séquence d’instructions pour obtenir une 
+construction géométrique simple, comme celle d’un carré. <br>
+          • L’élève identifie que l’instruction « multiplier par 2 » permet de passer d’un terme au suivant dans la suite évolutive de nombres : 1 ; 2 ; 4 ; 8 ; 16 ; etc. Il comprend que, pour obtenir le onzième terme de cette suite, il faut répéter 10 fois l’instruction « multiplier par 2 ». 
+        </td>
+        <td>
+<a href="#">Lien à ajouter</a>
+        </td>
+      </tr>
+
+	<tr>
+        <td>•  Programmer la construction d’un chemin simple. </td>
+        <td>• À la suite de la résolution, de manière débranchée c’est-à-dire sans outil numérique, des exercices ci-dessus, l’élève écrit et exécute un programme permettant de dessiner le chemin du bus ou celui du robot.  
+        </td>
+        <td>
+<a href="#">Lien à ajouter</a>
+        </td>
+	</tr>
+
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Séquence transversale : Résoudre des problèmes mettant en jeu des nombres inconnus -->
+<button class="accordion white">
+  <a href="https://pix.fr" target="_blank">
+    Séquence transversale : Résoudre des problèmes mettant en jeu des nombres inconnus
+  </a>
+  <span class="arrow">&#9654;</span>
+</button>
+<div class="panel">
+  <table class="sequence-table">
+    <thead>
+      <tr>
+        <th>Contenus</th>        <th>Compétences</th>
+        <th>Exemples de réussite</th>
+        <th>Exercices</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr><td rowspan="7"> blabla </td>
+        <td> •  Utiliser des modèles pré-algébriques pour résoudre des problèmes algébriques. </td>
+        <td> • En utilisant un schéma en barres pour traduire les relations entre les nombres inconnus, l’élève résout des problèmes comme, par exemple, le suivant : ► Pour la fête d’un village, on organise une course cycliste. Une prime totale de 320€ sera répartie entre les trois premiers coureurs. Le premier touchera la prime d’or, le deuxième la prime d’argent et le troisième la prime de bronze. La prime d’or s’élève à 70€ de plus que la prime d’argent et la prime de bronze à 80€ de moins que la prime d’argent. Quelle est la prime de chacun des trois premiers coureurs ? <br>
+	•  L’élève résout des problèmes comme dans l’exemple suivant : ► En utilisant les prix indiqués ci-dessous, déterminer le prix d’une pastèque et celui d’un ananas. 
+        </td>
+        <td>
+<a href="#">Lien à ajouter</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td>• Identifier la structure d’un motif évolutif en repérant une régularité et en identifiant une structure.</td>
+        <td>• L’élève résout des problèmes comme, par exemple, le suivant : 
+On fabrique des petites maisons avec des allumettes : Combien faut-il d’allumettes pour réaliser : ► 1 maison ? ► 4 maisons ? ► 25 maisons ?<br>
+          • L’élève identifie une relation entre le nombre de maisons et le nombre d’allumettes, par exemple en organisant ses calculs dans un tableau.
+        </td>
+        <td>
+<a href="#">Lien à ajouter</a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const accordions = document.querySelectorAll(".accordion");
+    accordions.forEach(button => {
+      button.addEventListener("click", () => {
+        button.classList.toggle("active");
+        const panel = button.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+  });
+</script>
+
+<script>
+  // Empêche l'ouverture de l'accordéon quand on clique sur un lien dans le bouton
+  document.querySelectorAll('.accordion a').forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.stopPropagation(); // bloque le clic de se propager au bouton
+    });
+  });
+</script>
+
+
+</body>
+</html>
