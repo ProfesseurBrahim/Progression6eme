@@ -197,10 +197,42 @@ h1 {
 
 
 
+
+/* Bouton en haut à droite */
+#dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #444;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+#dark-mode-toggle:hover {
+  background: #222;
+}
+
+/* Mode nuit */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+	  
+
+
   </style>
 </head>
 <body>
 
+<button id="dark-mode-toggle">🌙 Mode nuit</button>
+
+	
 <h1>Progression de Mathématiques 6e</h1>
 
 
@@ -2138,6 +2170,15 @@ On fabrique des petites maisons avec des allumettes : Combien faut-il d’allume
   });
 </script>
 
+<script>
+  const toggleButton = document.getElementById('dark-mode-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleButton.textContent = document.body.classList.contains('dark-mode') 
+      ? '☀️ Mode jour' 
+      : '🌙 Mode nuit';
+  });
+</script>
 
 </body>
 </html>
