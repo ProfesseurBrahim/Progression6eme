@@ -220,16 +220,32 @@ h1 {
 /* Mode nuit */
 body.dark-mode {
   background: #121212 !important;  /* remplace le dégradé clair */
-  color: #e0e0e0;
 }
 
-	  
+#close-accordions-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #444;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 1000;
+}
+#close-accordions-button:hover {
+  background: #222;
+}	  
 
 
   </style>
 </head>
 <body>
-
+	
+<button id="close-accordions-button">🔽 Fermer tout</button>
+	
 <button id="dark-mode-toggle">🌙 Mode nuit</button>
 
 	
@@ -2177,6 +2193,18 @@ On fabrique des petites maisons avec des allumettes : Combien faut-il d’allume
     toggleButton.textContent = document.body.classList.contains('dark-mode') 
       ? '☀️ Mode jour' 
       : '🌙 Mode nuit';
+  });
+</script>
+
+<script>
+  // Fermer tous les accordéons
+  document.getElementById('close-accordions-button').addEventListener('click', () => {
+    document.querySelectorAll('.accordion').forEach((btn) => {
+      btn.classList.remove('active');
+    });
+    document.querySelectorAll('.panel').forEach((panel) => {
+      panel.style.display = 'none';
+    });
   });
 </script>
 
