@@ -240,91 +240,56 @@ body.dark-mode {
 }	  
 
 
-
-/* Table des séquences */
-.mental-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 16px;
+.mental-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cartes fixes */
+  gap: 12px;
+  margin-top: 1px;
 }
 
-/* Bordures et espacement */
-.mental-table th,
-.mental-table td {
-  padding: 12px;
-  border: 1px solid #ccc;
-  vertical-align: top;
-  text-align: left;
+.mental-card {
+  background: #fff;
+  border: 1px solid #c8d2e4;
+  border-radius: 10px;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
 }
 
-/* En-tête du tableau */
-.mental-table th {
-  background-color: #e6f7ff;
+.mental-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mental-card small {
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.mental-card a {
+  background: #8dbbe6;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
   font-weight: bold;
+  font-size: 0.8rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s;
 }
 
-/* Colonnes avec largeur fixe pour alignement */
-.mental-table th:nth-child(1),
-.mental-table td:nth-child(1) {
-  width: 20%;
+.mental-card a:hover {
+  background: #6ba5d8;
 }
 
-.mental-table th:nth-child(2),
-.mental-table td:nth-child(2) {
-  width: 5%;
-}
 
-.mental-table th:nth-child(3),
-.mental-table td:nth-child(3) {
-  width: 20%;
+#mental-panel {
+  background: transparent !important;
+border: none;
 }
-
-.mental-table th:nth-child(4),
-.mental-table td:nth-child(4) {
-  width: 5%;
-}
-
-.mental-table th:nth-child(5),
-.mental-table td:nth-child(5) {
-  width: 20%;
-}
-
-.mental-table th:nth-child(6),
-.mental-table td:nth-child(6) {
-  width: 5%;
-}
-.mental-table th:nth-child(7),
-.mental-table td:nth-child(7) {
-  width: 20%;
-}
-
-.mental-table th:nth-child(8),
-.mental-table td:nth-child(8) {
-  width: 5%;
-}
-
-.mental-table td:nth-child(3),
-.mental-table td:nth-child(5),
-.mental-table td:nth-child(7) {
-  border-left: 3px solid #ccc;
-}
-
-.mental-table th:nth-child(3),
-.mental-table th:nth-child(5),
-.mental-table th:nth-child(7) {
-  border-left: 3px solid #ccc;
-}
-
-/* Liens dans la colonne "Exercices" */
-.mental-table a {
-  color: #0066cc;
-  text-decoration: underline;
-}
-
-.mental-table a:hover {
-  color: #003366;
-}
-
 
 
   </style>
@@ -341,12 +306,6 @@ body.dark-mode {
 
 
 
-
-
-
-
-
-
 <!-- Séquence transversale : Calcul mental -->
 <button class="accordion multicolor">
   <a href="#" target="_blank">
@@ -354,145 +313,126 @@ body.dark-mode {
   </a>
   <span class="arrow">&#9654;</span>
 </button>
-<div class="panel">
-  <table class="mental-table">
-    <thead>
-      <tr>
-        <th>Intitulé</th>
-        <th>Exemples</th>
-	<th>Intitulé</th>
-        <th>Exemples</th>
-	<th>Intitulé</th>
-        <th>Exemples</th>
-	<th>Intitulé</th>
-        <th>Exemples</th>
-      </tr>
-    </thead>
-    <tbody>
 
-<tr>
-<td><span class="num-circle">1</span> Tables de multiplication 
-<td> <a href="CalculMental/1 - Tables de multplication.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">2</span> Complément à 10, 100, 1 000… 
-<td> <a href="CalculMental/2 - Complément à 10,100,1000....pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">3</span> Doubles et moitiés de nombres entiers
-<td> <a href="CalculMental/3 - Doubles et moitiés de nombres entiers.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">4</span> Sommes et différences
-<td> <a href="CalculMental/4 - Ajouter ou retrancher un nombre terminant par 8 ou 9.pdf" target="_blank">Exemples</a>
-</tr>
+<div class="panel" id="mental-panel">
+  <div class="mental-grid">
 
-<tr>
-<td><span class="num-circle">5</span> Quadruples et quarts de nombres entiers
-<td> <a href="CalculMental/5 - Quadruples et quarts de nombres entiers.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">6</span> Multiplier ou diviser par 5
-<td> <a href="CalculMental/6 - Multiplier ou diviser par 5.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">7</span> Critère de divisibilité par 3
-<td> <a href="CalculMental/7 - Critère de divisibilité par 3.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">8</span> Critère de divisibilité par 9
-<td> <a href="CalculMental/8 - Critère de divisibilité par 9.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">1</span><div><strong> Tables de multiplication 
+ </strong><br></div></div><a href="CalculMental/1 - Tables de multplication.pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">9</span> Conversions de durées 
-<td> <a href="CalculMental/9 - Conversions de durées.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">10</span> Multiplier par 11   
-<td> <a href="CalculMental/10 - Multiplier par 11.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">11</span> Multiplier par 8 
-<td> <a href="CalculMental/11 - Multiplier par 8.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">12</span> Multiplier par 25  
-<td> <a href="CalculMental/12 - Multiplier par 25.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">2</span><div><strong> Complément à 10, 100, 1 000… 
+ </strong><br></div></div><a href="CalculMental/2 - Complément à 10,100,1000....pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">13</span> Numération décimale   
-<td> <a href="CalculMental/13 - Numération décimale.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">14</span> Fractions et nombres décimaux   
-<td> <a href="CalculMental/14 - Fractions décimales et nombres décimaux.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">15</span> Multiplier par 9   
-<td> <a href="CalculMental/15 - Multiplier par 9.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">16</span> Les diviseurs de 360, 180 et 90    
-<td> <a href="CalculMental/16 - Les diviseurs de 360, 180 et 90.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">3</span><div><strong> Doubles et moitiés de nombres entiers
+ </strong><br></div></div><a href="CalculMental/3 - Doubles et moitiés de nombres entiers.pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">17</span> Multiplier par 15        
-<td> <a href="CalculMental/17 - Multiplier par 15.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">18</span> Priorités opératoires (sans parenthèses)    
-<td> <a href="CalculMental/18 - Priorités opératoires (sans parenthèses).pdf" target="_blank">Exemples</a> 
-<td><span class="num-circle">19</span> Priorités opératoires (avec parenthèses)  
-<td> <a href="CalculMental/19 - Priorités opératoires (avec parenthèses).pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">20</span> Complément à 1        
-<td> <a href="CalculMental/20 - Complément à 1.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">4</span><div><strong> Sommes et différences
+ </strong><br></div></div><a href="CalculMental/4 - Ajouter ou retrancher un nombre terminant par 8 ou 9.pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">21</span> Multiplier par 10, 100 ou 1 000   
-<td> <a href="CalculMental/21 - Multiplier par 10, 100 ou 1000.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">22</span> Diviser par 10, 100 ou 1 000    
-<td> <a href="CalculMental/22 - Diviser par 10, 100 ou 1000.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">23</span> Multiplier par 0,1 ou 0,01 ou 0,001    
-<td> <a href="CalculMental/23 - Multiplier par 0.1, 0.01, 0.001.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">24</span> Conversions (longueur, masse, capacité)  
-<td> <a href="CalculMental/24 - Conversions.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">5</span><div><strong> Quadruples et quarts de nombres entiers
+ </strong><br></div></div><a href="CalculMental/5 - Quadruples et quarts de nombres entiers.pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">25</span> Arrondi d’un nombre       
-<td> <a href="CalculMental/25 - Arrondi d'un nombre.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">26</span> Doubles et moitiés de nombres décimaux  
-<td> <a href="CalculMental/26 - Doubles et moitiés de nombres décimaux.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">27</span> Diviser par 125      
-<td> <a href="CalculMental/27 - Diviser par 125.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">28</span> Egalités de quotients  
-<td> <a href="CalculMental/28 - Egalités de quotients.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">6</span><div><strong> Multiplier ou diviser par 5
+ </strong><br></div></div><a href="CalculMental/6 - Multiplier ou diviser par 5.pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">29</span> Multiplier par 1/2 ou par 1/4 ou par 1/5   
-<td> <a href="CalculMental/29 - Multiplier par 1 2 ou par 1 4 ou par 1 5.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">30</span> Calcul de périmètres     
-<td> <a href="CalculMental/30 - Calcul de périmètres.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">31</span> Conversions (unités d’aire)     
-<td> <a href="CalculMental/31 -Conversions (unités d'aire).pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">32</span> Calcul d’aires         
-<td> <a href="CalculMental/32 - Calcul d'aires.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">7</span><div><strong> Critère de divisibilité par 3
+ </strong><br></div></div><a href="CalculMental/7 - Critère de divisibilité par 3.pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">33</span> Multiplier par 0,5 ou par 0,25 ou par 0,2   
-<td> <a href="CalculMental/33 - Multiplier par 0.5 ou par 0.25 ou par 0.2.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">34</span> Multiplier par 1,5        
-<td> <a href="CalculMental/34 - Multiplier par 1.5.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">35</span> Tableaux de proportionnalité      
-<td> <a href="CalculMental/35 - Tableaux de proportionnalité.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">36</span> Pourcentages simples 
-<td> <a href="CalculMental/36 - Pourcentages simples.pdf" target="_blank">Exemples</a>
-</tr>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">8</span><div><strong> Critère de divisibilité par 9
+ </strong><br></div></div><a href="CalculMental/8 - Critère de divisibilité par 9.pdf" target="_blank">Exemples</a></div>
 
-<tr>
-<td><span class="num-circle">37</span> Pourcentage d’un nombre (méthode) 
-<td> <a href="CalculMental/37 - Pourcentage d'un nombre.pdf" target="_blank">Exemples</a>
-<td><span class="num-circle">38</span> Conversions (unités de volume) 
-<td> <a href="CalculMental/38 - Conversions (unités de volume).pdf" target="_blank">Exemples</a>
-<td>
-<td>
-<td>
-<td>
-</tr>
-    </tbody>
-  </table>
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">9</span><div><strong> Conversions de durées 
+ </strong><br></div></div><a href="CalculMental/9 - Conversions de durées.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">10</span><div><strong> Multiplier par 11   
+ </strong><br></div></div><a href="CalculMental/10 - Multiplier par 11.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">11</span><div><strong> Multiplier par 8 
+ </strong><br></div></div><a href="CalculMental/11 - Multiplier par 8.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">12</span><div><strong> Multiplier par 25  
+ </strong><br></div></div><a href="CalculMental/12 - Multiplier par 25.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">13</span><div><strong> Numération décimale   
+ </strong><br></div></div><a href="CalculMental/13 - Numération décimale.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">14</span><div><strong> Fractions et nombres décimaux   
+ </strong><br></div></div><a href="CalculMental/14 - Fractions décimales et nombres décimaux.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">15</span><div><strong> Multiplier par 9   
+ </strong><br></div></div><a href="CalculMental/15 - Multiplier par 9.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">16</span><div><strong> Les diviseurs de 360, 180 et 90    
+ </strong><br></div></div><a href="CalculMental/16 - Les diviseurs de 360, 180 et 90.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">17</span><div><strong> Multiplier par 15        
+ </strong><br></div></div><a href="CalculMental/17 - Multiplier par 15.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">18</span><div><strong> Priorités opératoires (sans parenthèses)    
+ </strong><br></div></div><a href="CalculMental/18 - Priorités opératoires (sans parenthèses).pdf" target="_blank">Exemples</a></div> 
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">19</span><div><strong> Priorités opératoires (avec parenthèses)  
+ </strong><br></div></div><a href="CalculMental/19 - Priorités opératoires (avec parenthèses).pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">20</span><div><strong> Complément à 1        
+ </strong><br></div></div><a href="CalculMental/20 - Complément à 1.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">21</span><div><strong> Multiplier par 10, 100 ou 1 000   
+ </strong><br></div></div><a href="CalculMental/21 - Multiplier par 10, 100 ou 1000.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">22</span><div><strong> Diviser par 10, 100 ou 1 000    
+ </strong><br></div></div><a href="CalculMental/22 - Diviser par 10, 100 ou 1000.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">23</span><div><strong> Multiplier par 0,1 ou 0,01 ou 0,001    
+ </strong><br></div></div><a href="CalculMental/23 - Multiplier par 0.1, 0.01, 0.001.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">24</span><div><strong> Conversions (longueur, masse, capacité)  
+ </strong><br></div></div><a href="CalculMental/24 - Conversions.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">25</span><div><strong> Arrondi d’un nombre       
+ </strong><br></div></div><a href="CalculMental/25 - Arrondi d'un nombre.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">26</span><div><strong> Doubles et moitiés de nombres décimaux  
+ </strong><br></div></div><a href="CalculMental/26 - Doubles et moitiés de nombres décimaux.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">27</span><div><strong> Diviser par 125      
+ </strong><br></div></div><a href="CalculMental/27 - Diviser par 125.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">28</span><div><strong> Egalités de quotients  
+ </strong><br></div></div><a href="CalculMental/28 - Egalités de quotients.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">29</span><div><strong> Multiplier par 1/2 ou par 1/4 ou par 1/5   
+ </strong><br></div></div><a href="CalculMental/29 - Multiplier par 1 2 ou par 1 4 ou par 1 5.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">30</span><div><strong> Calcul de périmètres     
+ </strong><br></div></div><a href="CalculMental/30 - Calcul de périmètres.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">31</span><div><strong> Conversions (unités d’aire)     
+ </strong><br></div></div><a href="CalculMental/31 -Conversions (unités d'aire).pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">32</span><div><strong> Calcul d’aires         
+ </strong><br></div></div><a href="CalculMental/32 - Calcul d'aires.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">33</span><div><strong> Multiplier par 0,5 ou par 0,25 ou par 0,2   
+ </strong><br></div></div><a href="CalculMental/33 - Multiplier par 0.5 ou par 0.25 ou par 0.2.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">34</span><div><strong> Multiplier par 1,5        
+ </strong><br></div></div><a href="CalculMental/34 - Multiplier par 1.5.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">35</span><div><strong> Tableaux de proportionnalité      
+ </strong><br></div></div><a href="CalculMental/35 - Tableaux de proportionnalité.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">36</span><div><strong> Pourcentages simples 
+ </strong><br></div></div><a href="CalculMental/36 - Pourcentages simples.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">37</span><div><strong> Pourcentage d’un nombre (méthode) 
+ </strong><br></div></div><a href="CalculMental/37 - Pourcentage d'un nombre.pdf" target="_blank">Exemples</a></div>
+
+      <div class="mental-card"><div class="mental-card-header"><span class="num-circle">38</span><div><strong> Conversions (unités de volume) 
+ </strong><br></div></div><a href="CalculMental/38 - Conversions (unités de volume).pdf" target="_blank">Exemples</a></div>
+
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- Séquence 1 -->
 <button class="accordion">
