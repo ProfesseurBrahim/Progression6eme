@@ -65,6 +65,7 @@ h1 {
   background-color: #ffc0c0;
 }
 
+	  
 
 /* Liens dans les boutons d'accordéon en noir */
 .accordion a,
@@ -123,6 +124,18 @@ h1 {
 .accordion.white:hover {
   background-color: #e9e9e9;
 }
+
+.accordion.white2 {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 7px 10px;
+  font-size: 14px;
+}
+.accordion.white2:hover {
+  background-color: #e9e9e9;
+}	    	  
+	  
 
 .accordion.multicolor {
   background: linear-gradient(90deg, #f44336, #ff9800, #ffeb3b, #4caf50, #2196f3, #9c27b0);
@@ -481,6 +494,40 @@ border: none;
 	
 <h1>Mathématiques - Sixième</h1>
 
+
+<!-- Séance 0 -->
+<button class="accordion white2">
+    Séance 0 : introduction de l'année
+  <span class="arrow">&#9654;</span>
+</button>
+	
+<div class="panel">
+	<div class="sequence-grid">
+    	<!-- Carte 1 -->
+		<div class="sequence-card">
+      <h3>Règles et organisation</h3>
+        <div class="sequence-links">
+        <a href="Rentrée/Accueil des élèves.pdf">Accueil des élèves</a>
+        <a href="Rentrée/Gestion des écrits.pdf">Gestion des écrits</a> 
+      </div>
+		</div>
+	<!-- Carte 2 -->
+		<div class="sequence-card">
+      <h3>Questionnaire</h3>
+        <div class="sequence-links">
+        <a href="Rentrée/Questionnaire des élèves.pdf">Questionnaire des élèves</a>
+        </div>
+		</div>	
+
+		<div class="sequence-card">
+      <h3>Activité de rentrée</h3>
+        <div class="sequence-links">
+        <a href="Rentrée/Activité -.pdf">Activité</a>
+      </div>
+		</div>	
+			
+      </div>
+	</div>	
 
 
 
@@ -2541,6 +2588,7 @@ document.getElementById("close-accordions-button").addEventListener("click", fun
     
 </body>
 </html>
+
 
 
 
