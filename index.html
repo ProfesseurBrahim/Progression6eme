@@ -638,7 +638,46 @@ border: none;
 	  
 	  
 	  
+.sequence-linksEXG { 
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4px;	
+}
+      
+.sequence-linksEXG a {
+   position: relative;
+  display: block;
+  background: #6FCF97;
+  color: white;
+  padding: 6px 10px 6px 34px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.sequence-linksEXE a:hover { background: #57C47F; }
+.sequence-linksEXE a::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="8" width="2" height="8"/><rect x="4" y="7" width="2" height="10"/><rect x="6" y="10" width="12" height="4"/><rect x="18" y="7" width="2" height="10"/><rect x="20" y="8" width="2" height="8"/></svg>') no-repeat center/contain;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="8" width="2" height="8"/><rect x="4" y="7" width="2" height="10"/><rect x="6" y="10" width="12" height="4"/><rect x="18" y="7" width="2" height="10"/><rect x="20" y="8" width="2" height="8"/></svg>') no-repeat center/contain;
+  opacity: 0.95;
+  pointer-events: none;
+}
+.sequence-linksCours a.no-icon::before { display: none; }
 
+
+
+	  
 
   </style>
 
@@ -846,6 +885,10 @@ border: none;
 	
 
   </div>
+
+	<div class="sequence-linksEXG">
+        <a href="Exercices/S1/Exercices - Synthèse.pdf">Exercices - Synthèse</a>
+    </div>
 
 	<div class="sequence-linksActG">
         <a href="Activités/S1/Activité - Différents systèmes de numération.pdf">Activité TAPI - Différents systèmes de numération</a>
@@ -2791,6 +2834,7 @@ document.getElementById("close-accordions-button").addEventListener("click", fun
     
 </body>
 </html>
+
 
 
 
