@@ -592,6 +592,54 @@ border: none;
 
 
 
+
+
+
+
+.sequence-linksActG { 
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2px;	
+}
+      
+.sequence-linksActG a {
+  position: relative;
+  display: block;
+  background: #8dbbe6;
+  color: white;
+  padding: 6px 10px 6px 34px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+  text-align: center;
+}
+.sequence-linksActG a:hover { background: #6ba5d8; }
+.sequence-linksActG a::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 4l4 4h-4V4zM8 9h6v2H8V9zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>') no-repeat center/contain;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 4l4 4h-4V4zM8 9h6v2H8V9zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>') no-repeat center/contain;
+  opacity: 0.95;
+  pointer-events: none;
+}
+.sequence-linksCours a.no-icon::before { display: none; }
+
+
+	  
+	  
+	  
+
+
   </style>
 
 <link rel="icon" type="image/png" href="LogoMichelet.png">
@@ -794,7 +842,7 @@ border: none;
 
   </div>
 
-	<div class="sequence-links">
+	<div class="sequence-linksActG">
         <a href="Activités/S1/Activité - Différents systèmes de numération.pdf">Activité - Différents systèmes de numération</a>
     </div>
 
@@ -2734,6 +2782,7 @@ document.getElementById("close-accordions-button").addEventListener("click", fun
     
 </body>
 </html>
+
 
 
 
