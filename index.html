@@ -676,6 +676,60 @@ border: none;
 }
 .sequence-linksCours a.no-icon::before { display: none; }
 
+
+
+
+
+/* Le conteneur reste le même; on réserve juste de la place à droite */
+.sequence-linksEVAL { position: relative; }
+.sequence-linksEVAL a:first-of-type { padding-right: 130px; }
+
+/* Bouton "Correction" uniquement : vert, sans icône, sans padding pour logo */
+.sequence-linksEVAL a.correction-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  background: #6FCF97 !important;  /* vert uni pour le bouton */
+  color: #fff !important;
+  border-radius: 6px;
+  padding: 4px 12px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #57C47F;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  white-space: nowrap;
+  z-index: 2;
+  /* neutralise le padding gauche prévu pour l’icône globale */
+  padding-left: 12px !important;
+}
+
+/* Survol du bouton Correction */
+.sequence-linksEVAL a.correction-btn:hover {
+  background: #57C47F !important;
+}
+
+/* Supprimer l’icône uniquement pour le bouton Correction */
+.sequence-linksEVAL a.correction-btn::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* Optionnel: mode nuit pour le bouton */
+body.dark-mode .sequence-linksEVAL a.correction-btn {
+  background: #1f4d22 !important;
+  border-color: #163a18;
+}
+
+
+
+
+
+
+	  
+
   </style>
 
 <link rel="icon" type="image/png" href="LogoMichelet.png">
@@ -900,6 +954,7 @@ border: none;
 	
 	<div class="sequence-linksEVAL">
         <a href="Evaluations/S1/Chapitre 1 - Les nombres entiers - Evaluation.pdf" target="_blank">Evaluation de fin de chapitre</a>
+		<a class="correction-btn"href="Evaluations/S1/Correction évaluation 1.pdf" target="_blank" title="Voir la correction"> Correction </a>
     </div>
 	
 </div>
@@ -2838,6 +2893,7 @@ document.getElementById("close-accordions-button").addEventListener("click", fun
     
 </body>
 </html>
+
 
 
 
