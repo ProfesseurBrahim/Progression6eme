@@ -637,6 +637,57 @@ border: none;
 .sequence-linksCours a.no-icon::before { display: none; }
 
 
+
+
+
+.sequence-linksActPA { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  justify-content: center;   /* centre la grille */
+  max-width: 900px;
+  margin: 0 auto 4px auto;   /* centre horizontalement */
+}
+      
+.sequence-linksActPA a {
+  position: relative;
+  display: block;
+  background: #FFD700;
+  color: white;
+  padding: 6px 10px 6px 34px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+  text-align: center;
+}
+.sequence-linksActPA a:hover { background: #FFEB7F; }
+.sequence-linksActPA a::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 4l4 4h-4V4zM8 9h6v2H8V9zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>') no-repeat center/contain;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 4l4 4h-4V4zM8 9h6v2H8V9zm0 4h8v2H8v-2zm0 4h8v2H8v-2z"/></svg>') no-repeat center/contain;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 	  
 	  
 	  
@@ -729,6 +780,7 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
 
 
 
+	  
 
 
 	  
@@ -949,13 +1001,13 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
 		<a href="Activités/S1/Activité - Différents systèmes de numération2.pdf" target="_blank">TAPI - Différents systèmes de numération 2</a>
     </div>
 
-	<div class="sequence-linksActG">
+	<div class="sequence-linksActPA">
 		<a href="Activités/S1/Activité - Pixel Art Salamèche.pdf" target="_blank">Pixel Art Salamèche</a>
 		<a href="Activités/S1/Activité - Pixel Art Carapuce.pdf" target="_blank">Pixel Art Carapuce</a>
 		<a href="Activités/S1/Pixel Art - Dracaufeu.pdf" target="_blank">Pixel Art Dracaufeu</a>
     </div>
 
-	<div class="sequence-linksActG">
+	<div class="sequence-linksActPA">
 		<a href="Activités/S1/Pixel Art - Renne.pdf" target="_blank">Pixel Art Renne</a>
 		<a href="Activités/S1/Pixel Art - Oiseau.pdf" target="_blank">Pixel Art Oiseau</a>
 		<a href="Activités/S1/Pixel Art - Bonhomme de neige.pdf" target="_blank">Pixel Art Bonhomme de neige</a>
@@ -1218,20 +1270,20 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
 		<a href="Activités/S3/Activité - Crack the code #1 .pdf" target="_blank">Crack the code</a>
     </div>
 
-	<div class="sequence-linksActG">
+	<div class="sequence-linksActPA">
         <a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_1_.pdf" target="_blank">Pixel Art Lion</a>
 		<a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_2_.pdf" target="_blank">Pixel Art Souris</a>
 		<a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_3_.pdf" target="_blank">Pixel Art Ours</a>
     </div>
 
-	<div class="sequence-linksActG">
+	<div class="sequence-linksActPA">
         <a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_4_.pdf" target="_blank">Pixel Art HP</a>
 		<a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_5_.pdf" target="_blank">Pixel Art Yoda</a>
 		<a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_6_.pdf" target="_blank">Pixel Art Poule</a>
     </div>
 
 
-	<div class="sequence-linksActG">
+	<div class="sequence-linksActPA">
         <a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_7_.pdf" target="_blank">Pixel Art Thanos</a>
 		<a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_8_.pdf" target="_blank">Pixel Art Cochon</a>
 		<a href="Activités/S3/Chapitre_3___Les_nombres_décimaux__Pixel_Art_9_.pdf" target="_blank">Pixel Art Tortue</a>
@@ -2972,5 +3024,6 @@ document.getElementById("close-accordions-button").addEventListener("click", fun
     
 </body>
 </html>
+
 
 
