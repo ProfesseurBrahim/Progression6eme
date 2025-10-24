@@ -505,6 +505,62 @@ border: none;
   pointer-events: none;
 }
 
+
+.sequence-linksEVALV { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  justify-content: center;   /* centre la grille */
+  max-width: 900px;
+  margin: 0 auto 4px auto;   /* centre horizontalement */
+}
+      
+.sequence-linksEVALV a {
+  position: relative;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  padding: 6px 10px 6px 42px;
+  background: linear-gradient(90deg,
+    rgba(229,57,53,0.82) 0%,
+    rgba(251,140,0,0.82) 50%,
+    rgba(67,160,71,0.82) 100%
+  ) !important;
+  transition: background 0.25s ease;
+}
+.sequence-linksEVALV a:hover {
+  background: linear-gradient(90deg,
+    #c62828 0%,
+    #ef6c00 50%,
+    #2e7d32 100%
+  ) !important;
+}
+.sequence-linksEVALV a::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="18" rx="2" ry="2"/><rect x="9" y="2" width="6" height="4" rx="1" ry="1"/><rect x="8" y="9" width="8" height="2"/><rect x="8" y="13" width="8" height="2"/><rect x="8" y="17" width="8" height="2"/></svg>') no-repeat center/contain;
+          mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="18" rx="2" ry="2"/><rect x="9" y="2" width="6" height="4" rx="1" ry="1"/><rect x="8" y="9" width="8" height="2"/><rect x="8" y="13" width="8" height="2"/><rect x="8" y="17" width="8" height="2"/></svg>') no-repeat center/contain;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+
+
+
+
+
+
+
+	  
 /* Layout responsive des blocs de liens */
 .sequence-links,
 .sequence-linksYT,
@@ -652,7 +708,7 @@ border: none;
 .sequence-linksActPA a {
   position: relative;
   display: block;
-  background: #FFD700;
+  background: #EE82EE;
   color: white;
   padding: 6px 10px 6px 34px;
   border-radius: 6px;
@@ -662,7 +718,7 @@ border: none;
   transition: background 0.3s;
   text-align: center;
 }
-.sequence-linksActPA a:hover { background: #E1AD01; }
+.sequence-linksActPA a:hover { background: #9400D3; }
 .sequence-linksActPA a::before {
   content: "";
   position: absolute;
@@ -1049,7 +1105,7 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
 
     <!-- Carte 1 -->
     <div class="sequence-card">
-      <h3>Vocabulaire, notations et tracer</h3>
+      <h3>Distances</h3>
 
       <button class="mini-accordion">Compétence(s) <span class="arrow">▶</span></button>
       <div class="mini-panel">
@@ -1057,7 +1113,9 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
         • Utiliser les outils usuels (règle, équerre, compas).<br>
         • Connaitre les notations et les codes usuels.<br>
         • Reconnaitre et utiliser la perpendicularité et le parallélisme.<br>
-        • Tracer à la règle et à l’équerre des droites, segments, perpendiculaires et parallèles.
+        • Tracer à la règle et à l’équerre des droites, segments, perpendiculaires et parallèles.<br>
+		• Connaitre et utiliser la définition de la distance entre deux points.<br>
+        • Connaitre et utiliser la définition du milieu d’un segment.
       </div>
 
       <button class="mini-accordion">Exemple(s) de réussite <span class="arrow">▶</span></button>
@@ -1065,7 +1123,12 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
         • L’élève utilise à bon escient : point, droite, segment, demi-droite, milieu…<br>
         • Il sait reconnaître droites perpendiculaires, parallèles, angle droit, aigu, obtus.<br>
         • Il connaît les symboles ⊥ ; // ; ∈ ; ∉ et sait utiliser les codages géométriques.<br>
-	    • Exemple : trace une perpendiculaire passant par A extérieur à (d).  
+	    • Exemple : trace une perpendiculaire passant par A extérieur à (d). <br>
+		• La distance entre deux points A et B est définie comme la longueur du segment [AB]. Elle est notée AB.<br>
+        • L’élève admet que le plus court chemin pour aller de A à B est le segment [AB].<br>
+        • Il en déduit que, pour tout point C, AC + CB ⩾ AB, l’égalité étant réalisée pour tous les points appartenant au segment [AB], et uniquement pour eux.<br>
+        • L’élève reporte une distance, compare deux distances à l’aide d’un compas ou d’une règle graduée.<br>
+        • L’élève connait la définition du milieu d’un segment et s’appuie sur elle pour le construire selon les outils dont il dispose : pliage, guide âne, règle graduée, compas, etc.
       </div>
 
       <div class="sequence-links">
@@ -1083,31 +1146,7 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
 
 	<!-- Carte 2 -->
     <div class="sequence-card">
-      <h3>Distance et milieu d'un segment</h3>
-
-      <button class="mini-accordion">Compétence(s) <span class="arrow">▶</span></button>
-      <div class="mini-panel">
-        • Connaitre et utiliser la définition de la distance entre deux points.<br>
-        • Connaitre et utiliser la définition du milieu d’un segment.
-      </div>
-
-      <button class="mini-accordion">Exemple(s) de réussite <span class="arrow">▶</span></button>
-      <div class="mini-panel">
-        • La distance entre deux points A et B est définie comme la longueur du segment [AB]. Elle est notée AB.<br>
-        • L’élève admet que le plus court chemin pour aller de A à B est le segment [AB].<br>
-        • Il en déduit que, pour tout point C, AC + CB ⩾ AB, l’égalité étant réalisée pour tous les points appartenant au segment [AB], et uniquement pour eux.<br>
-        • L’élève reporte une distance, compare deux distances à l’aide d’un compas ou d’une règle graduée.<br>
-        • L’élève connait la définition du milieu d’un segment et s’appuie sur elle pour le construire selon les outils dont il dispose : pliage, guide âne, règle graduée, compas, etc.
-      </div>
-
-      <div class="sequence-links">
-        <a href="Activités/S4/Activité - Milieu.pdf" target="_blank">Daltons</a>
-      </div>
-    </div>
-
-	<!-- Carte 3 -->
-    <div class="sequence-card">
-      <h3>Propriétés des médiatrices</h3>
+      <h3>Médiatrices</h3>
 
       <button class="mini-accordion">Compétence(s) <span class="arrow">▶</span></button>
       <div class="mini-panel">
@@ -1139,15 +1178,9 @@ body.dark-mode .sequence-linksEVAL a.correction-btn {
 
 	 </div> 
 
-	<div class="sequence-linksEVAL">
+	<div class="sequence-linksEVALV">
         <a href="Evaluations/S2/Chapitre 2 - Distance et médiatrice - Evaluation 1A.pdf" target="_blank">Evaluation n°1 - A</a>
-    </div>
-
-	<div class="sequence-linksEVAL">
         <a href="Evaluations/S2/Chapitre 2 - Distance et médiatrice - Evaluation 1B.pdf" target="_blank">Evaluation n°1 - B</a>
-    </div>
-
-	<div class="sequence-linksEVAL">
         <a href="Evaluations/S2/Chapitre 2 - Distance et médiatrice - Evaluation 1R.pdf" target="_blank">Evaluation n°1 - R</a>
     </div>
 	
@@ -3024,6 +3057,7 @@ document.getElementById("close-accordions-button").addEventListener("click", fun
     
 </body>
 </html>
+
 
 
 
