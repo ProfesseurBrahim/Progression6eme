@@ -828,6 +828,135 @@ border: none;
 }	  
 
 
+
+
+
+
+
+
+
+
+
+
+/* === Fond ciel bleu pour le mode jour === */
+body {
+  background: linear-gradient(to bottom, #aee1f9 0%, #ffffff 100%);
+  position: relative;
+}
+
+/* Ciel étoilé (affiché uniquement en mode nuit) */
+body.dark-mode {
+  background: #000;
+  position: relative;
+}
+
+/* Conteneur du ciel étoilé */
+#star-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  display: none; /* caché par défaut */
+}
+
+/* Actif uniquement en mode nuit */
+body.dark-mode #star-background {
+  display: block;
+}
+
+/* Petites étoiles scintillantes */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Étoiles filantes */
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(45deg, white, rgba(255,255,255,0));
+  opacity: 0.7;
+  transform: rotate(45deg);
+  animation: shoot 1.5s linear forwards;
+}
+
+@keyframes shoot {
+  from { transform: translate(0,0) rotate(45deg); opacity: 1; }
+  to { transform: translate(300px,300px) rotate(45deg); opacity: 0; }
+}
+
+
+
+
+
+
+	  
+/* === Nuages version réaliste === */
+.cloud {
+  position: fixed;
+  top: calc(5% + 15vh * var(--i));
+  left: -250px;
+  width: var(--w, 180px);
+  height: var(--h, 80px);
+  background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.9), rgba(255,255,255,0.6) 70%);
+  border-radius: 50%;
+  box-shadow:
+    60px 10px 0 10px rgba(255,255,255,0.7),
+    120px 20px 0 20px rgba(255,255,255,0.6),
+    180px 0px 0 15px rgba(255,255,255,0.5);
+  opacity: 0.9;
+  filter: blur(1px);
+  animation: floatClouds var(--speed, 90s) linear infinite;
+  z-index: -1;
+  display: none; /* visible seulement en mode jour */
+}
+
+body:not(.dark-mode) .cloud {
+  display: block;
+}
+
+/* Animation du déplacement horizontal */
+@keyframes floatClouds {
+  0% {
+    transform: translateX(0) scale(var(--scale, 1));
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120vw) scale(var(--scale, 1));
+    opacity: 0.8;
+  }
+}
+
+	  
+
+
+.cloud {
+  animation: floatClouds var(--speed, 90s) linear infinite,
+             cloudDrift 6s ease-in-out infinite alternate;
+}
+
+@keyframes cloudDrift {
+  0% { transform: translateY(0) scale(var(--scale, 1)); }
+  100% { transform: translateY(10px) scale(var(--scale, 1)); }
+}
+
+	  
 	  
 
   </style>
@@ -3051,9 +3180,66 @@ document.getElementById("close-accordions-button").addEventListener("click", fun
 });
 </script>
 
+
+
+
+
+<!-- ☁️ Nuages du mode jour -->
+<div class="cloud" style="--i:1; --w:160px; --h:70px; --speed:80s; --scale:1;"></div>
+<div class="cloud" style="--i:2; --w:220px; --h:90px; --speed:120s; --scale:1.2;"></div>
+<div class="cloud" style="--i:3; --w:280px; --h:100px; --speed:150s; --scale:1.4;"></div>
+<div class="cloud" style="--i:4; --w:130px; --h:60px; --speed:70s; --scale:0.9;"></div>
+<div class="cloud" style="--i:5; --w:250px; --h:110px; --speed:180s; --scale:1.6;"></div>
+
+
+<!-- 🌌 Ciel étoilé du mode nuit -->
+<div id="star-background">
+  <div id="stars"></div>
+  <div id="shooting-stars"></div>
+</div>
+
+<script>
+function createStars(count = 120) {
+  const starsContainer = document.getElementById('stars');
+  starsContainer.innerHTML = '';
+  for (let i = 0; i < count; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    const size = Math.random() * 2 + 1;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    star.style.top = `${Math.random() * 100}%`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.animationDelay = `${Math.random() * 5}s`;
+    starsContainer.appendChild(star);
+  }
+}
+
+function createShootingStar() {
+  const container = document.getElementById('shooting-stars');
+  const star = document.createElement('div');
+  star.classList.add('shooting-star');
+  star.style.top = `${Math.random() * 50}%`;
+  star.style.left = `${Math.random() * 80}%`;
+  container.appendChild(star);
+  setTimeout(() => star.remove(), 1500);
+}
+
+function randomShootingStars() {
+  setInterval(() => {
+    if (document.body.classList.contains('dark-mode')) {
+      createShootingStar();
+    }
+  }, 4000 + Math.random() * 3000);
+}
+
+createStars();
+randomShootingStars();
+</script>	
     
 </body>
 </html>
+
 
 
 
